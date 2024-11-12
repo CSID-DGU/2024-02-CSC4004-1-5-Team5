@@ -17,4 +17,5 @@ public class TravelAdvisoryServiceTest {
         // 결과 출력(여행 위험도 출력)
         System.out.println(result);
     }
+
 }

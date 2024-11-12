@@ -31,6 +31,7 @@ public class ChecklistController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+
     // 모든 체크리스트 조회
     @GetMapping
     public List<Checklist> getAllChecklists() {

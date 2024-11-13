@@ -1,0 +1,183 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #414141;
+  font-weight: 800;
+}
+
+
+form {
+  padding: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 314px;
+  margin-top: 20px; 
+}
+
+form h2 {
+  font-size: 20px;
+  color: #414141;
+  margin-bottom: 10px;
+}
+
+form h3 {
+  font-size: 15px;
+  color: #414141;
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  border: solid 1px #414141;
+  padding: 10px;
+  margin: 10px 0;
+  width: 70%;
+  border-radius: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #0A62D0;
+  color: #FFFFFF;
+  height: 43px;
+  width: 80%;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.left-align {
+  width: 100%;
+  text-align: left; /* 왼쪽 정렬 */
+  margin-left: 25%; /* 필요한 경우 왼쪽 여백 추가 */
+}
+
+/* 회원가입 링크 스타일 */
+form p {
+  margin-top: 30px; /* 로그인 버튼과의 간격을 조정 */
+}
+
+form p a {
+  color: #414141; /* 원하는 색상으로 변경 (예: 파란색) */
+  text-decoration: none; /* 밑줄 제거 */
+  font-size: 13px; /* 텍스트 크기 조정 */
+}
+
+form p a:hover {
+  color: #0056b3; /* 마우스 오버 시 색상 변경 (선택사항) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* 화면 전체 높이를 채우기 위해 설정 */
+    background-color: #f8f8f8;
+    margin: 0; /* 추가적인 여백 제거 */
+}
+
+.container {
+    width: 100%;
+    max-width: 375px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.back-button, .close-button {
+    font-size: 18px;
+    color: #007AFF;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.content {
+    padding: 20px;
+}
+
+.instruction {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sub-instruction {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #f0f0f0;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+.search-button {
+    font-size: 18px;
+    color: #888888;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

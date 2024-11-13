@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Kit Checklist</title>
+    <link rel="stylesheet" href="check.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-button">
+                </button>
+            <h1>모스크바</h1>
+            <button class="menu-button">⋮</button>
+            <br><br>
+            <p class="date-range">2022.10.16 - 2022.10.24</p>
+            
+        </header>
+
+        <div class="notice-box" onclick="window.open('https://example.com', '_blank')">
+            안전 공지 내용
+        </div>
+
+        <div class="weather">
+            <div class="day">
+                <p>10/16</p>
+                <img src="sunny.png" alt="Sunny">
+                <p>8°</p>
+            </div>
+            <div class="day">
+                <p>10/17</p>
+                <img src="sunny.png" alt="Sunny">
+                <p>9°</p>
+            </div>
+            <div class="day">
+                <p>10/18</p>
+                <img src="cloudy.png" alt="Cloudy">
+                <p>9°</p>
+            </div>
+            <div class="day">
+                <p>10/19</p>
+                <img src="rain.png" alt="Rain">
+                <p>10°</p>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="checklist">
+            <h2>체크리스트</h2>
+            <div class="category">
+                <h3>스킨케어 ▼</h3>
+                <ul>
+                    <li><input type="checkbox"> 스킨</li>
+                    <li><input type="checkbox"> 앰플</li>
+                    <li><input type="checkbox"> 화장솜</li>
+                    <li><input type="checkbox"> 로션</li>
+                    <li><input type="checkbox"> 바디로션</li>
+                    <li><input type="checkbox"> 크림</li>
+                    <li><button class="add-item">+ 추가</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>옷 ▼</h3>
+                <ul>
+                    <li><button class="add-item">+ 추가</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>화장품 ▼</h3>
+                <ul>
+                    <li><button class="add-item">+ 추가</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>해외 여행 ▼</h3>
+                <ul>
+                    <li><button class="add-item">+ 추가</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>세면 도구 ▼</h3>
+                <ul>
+                    <li><button class="add-item">+ 추가</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>기타 ▼</h3>
+                <ul>
+                    <li><button class="add-item">+ 추가</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,87 +1,144 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
 }
 
+/* body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+   /* 화면 전체 높이를 채우기 위해 설정 */
+  background-color: #ffffff;
+  margin: 0; /* 추가적인 여백 제거 */
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    width: 393px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 20px;
+  width: 393px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
 }
 
+/* header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-    font-size: 20px;
+
+header h1 {
+  font-size: 28px;
+  color: #414141;
+  font-weight: 800;
 }
+
+
+form {
+  padding: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 314px;
+  margin-top: 200px; 
+}
+
+form h2 {
+  font-size: 28px;
+  color: #414141;
+  margin-bottom: 40px;
+}
+
+
+
 
 .date-range {
-    font-size: 12px;
-    color: gray;
+  font-size: 12px;
+  color: gray;
 }
 
 .notice-box {
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 5px;
-    color: #333;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 20px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .weather {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    overflow-x: scroll;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  overflow-x: scroll;
 }
 
 .weather .day {
-    text-align: center;
-    width: 50px;
+  text-align: center;
+  width: 50px;
 }
 
 .checklist {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .checklist h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .category h3 {
-    font-size: 16px;
-    cursor: pointer;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .category ul {
-    list-style: none;
-    margin-top: 5px;
-    padding-left: 10px;
+  list-style: none;
+  margin-top: 5px;
+  padding-left: 10px;
 }
 
 .category li {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
 }
 
 .add-item {
-    background: none;
-    border: none;
-    color: blue;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
 }
+

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="list2.css">
   <title>체크리스트 목록</title>
+ 
 </head>
 <body>
   <header>
@@ -12,50 +13,23 @@
     <h1>TRAVEL KIT</h1>
   </header>
   
-  <main>
+  <form>
     <h2>나의 체크리스트</h2>
+
     <div class="checklist-container" id="checklistContainer">
-      <!-- Checklist items will be inserted here by JavaScript -->
-      
-      <!-- Add Button for New Checklist Entry -->
-      <div class="add-checklist-card" onclick="location.href='select1.html'">
-        <span>+</span>
+        <!-- Checklist items will be inserted here by JavaScript -->
+        
+        <!-- Add Button for New Checklist Entry -->
+        <div class="add-checklist-card" onclick="location.href='select1.html'">
+          <span>+</span>
+        </div>
       </div>
-    </div>
-  </main>
 
-  <script>
-    // Sample data for checklist entries
-    const checklistData = [
-      { location: "러시아 - 모스크바", dates: "2022.10.16 ~ 2022.10.24"},
-      { location: "체코 - 프라하", dates: "2023.10.16 ~ 2023.10.21", image: "images/czech.jpg" },
-      { location: "스위스 - 취리히", dates: "2023.10.21 ~ 2023.10.25", image: "images/switzerland.jpg" },
-      { location: "미국 - 뉴욕", dates: "2024.07.02 ~ 2024.07.14", image: "images/usa.jpg" }
-    ];
+  </form>
 
-    // Function to render checklist items
-    function renderChecklist() {
-      const container = document.getElementById("checklistContainer");
+  <script src="list3.js"></script>
 
-      checklistData.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "checklist-card";
-        card.style.backgroundImage = `url('${item.image}')`;
-
-        const location = document.createElement("p");
-        location.textContent = item.location;
-
-        const dates = document.createElement("span");
-        dates.textContent = item.dates;
-
-        card.appendChild(location);
-        card.appendChild(dates);
-        container.insertBefore(card, container.lastElementChild); // Insert before the "add" button
-      });
-    }
-
-    // Load checklist items when the page loads
-    document.addEventListener("DOMContentLoaded", renderChecklist);
-  </script>
 </body>
 </html>
+
+

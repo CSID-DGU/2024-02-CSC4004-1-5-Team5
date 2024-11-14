@@ -42,7 +42,9 @@ form {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  width: 314px;
+  /* width: 314px; */
+  width: 90%; /* 화면 너비의 90%를 차지하게 변경 */
+  max-width: 1200px; /* 최대 너비를 설정 */
   margin-top: 200px; 
 }
 
@@ -57,6 +59,7 @@ form h2 {
     flex-direction: column;
     gap: 10px;
     padding: 0 15px;
+    
   }
   
   .checklist-card {
@@ -67,7 +70,7 @@ form h2 {
     align-items: center;
     height: 80px;
     border-radius: 10px;
-    color: white;
+    color: #414141;
     font-size: 16px;
     overflow: hidden;
     background-size: cover;
@@ -106,7 +109,7 @@ form h2 {
     height: 80px;
     border-radius: 10px;
     background-color: #ddd;
-    color: #888;
+    color: #ffffff;
     font-size: 24px;
     cursor: pointer;
   }

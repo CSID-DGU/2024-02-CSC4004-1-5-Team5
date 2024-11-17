@@ -6,36 +6,13 @@
   font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
 }
 
-/* body {
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-} */
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-   /* 화면 전체 높이를 채우기 위해 설정 */
-  background-color: #ffffff;
-  margin: 0; /* 추가적인 여백 제거 */
 }
 
-
-.container {
-  width: 393px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-}
-
-/* header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 header {
   position: fixed;
   top: 0;
@@ -43,10 +20,10 @@ header {
   background-color: #ffffff;
   padding: 10px 0;
   display: flex;
-  flex-direction: column; /* 세로 정렬로 변경 */
   align-items: center;
   justify-content: center;
 }
+
 
 
 header h1 {
@@ -56,111 +33,142 @@ header h1 {
 }
 
 
-
 form {
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   width: 314px;
-  margin-top: 200px; 
+  margin-top: 100px; 
 }
 
 form h2 {
-  font-size: 28px;
+  font-size: 20px;
   color: #414141;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 
 
-
-.date-range {
-  font-size: 12px;
-  color: gray;
-}
-
-.notice-box {
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 5px;
-  color: #333;
-  text-align: center;
+form input[type="submit"] {
+  background-color: #0A62D0;
+  color: #FFFFFF;
+  height: 43px;
+  width: 80%;
+  border-radius: 10px;
   cursor: pointer;
   margin-top: 20px;
 }
+.left-align {
+  width: 100%;
+  text-align: left; /* 왼쪽 정렬 */
+  margin-left: 25%; /* 필요한 경우 왼쪽 여백 추가 */
+}
 
-.weather {
+
+
+form p a:hover {
+  color: #0056b3; /* 마우스 오버 시 색상 변경 (선택사항) */
+}
+
+/* Center the calendar container and adjust width for smaller screens */
+.calendar-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    overflow-x: scroll;
-  }
-  
-  .weather .day {
-    text-align: center;
-    width: 50px;
-  }
-
-.checklist {
-  margin-top: 20px;
+    justify-content: center;
+    margin-top: 16px;
+    padding: 0 16px; /* Adds some padding to prevent it from touching edges on small screens */
+    width: 100%;
 }
 
-.checklist h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
+/* Adjust the calendar size and styling */
+.flatpickr-calendar {
+    background-color: #95bade;
+    border-radius: 9px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Default to full width */
+    max-width: 100%; /* Ensures it doesn't exceed container width */
 }
 
-.category h3 {
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.category ul {
-  list-style: none;
-  margin-top: 5px;
-  padding-left: 10px;
-}
-
-.category li {
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-}
-
-.add-item {
-  background: none;
-  border: none;
-  color: gray;
-  cursor: pointer;
-}
-.hidden {
-    display: none;
-}
-
-.toggle-button {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    color: #007bff;
-}
-
-.category {
-    margin: 20px 0;
-}
-
-.add-item {
-    margin-top: 10px;
-    display: block;
+/* Selected date style */
+.flatpickr-day.selected {
     background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 4px;
+    color: #fff;
+    border-radius: 50%;
 }
 
-.add-item:hover {
-    background-color: #0056b3;
+/* Today's date style */
+.flatpickr-day.today {
+    border: 1px solid #007bff;
+    border-radius: 50%;
+}
+
+/* Weekday header style */
+.flatpickr-weekday {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Hover style for specific dates */
+.flatpickr-day:hover {
+    background-color: #e0f0ff;
+}
+
+/* Responsive adjustments for calendar size and centering */
+@media (max-width: 480px) {
+    .flatpickr-calendar {
+        max-width: 90vw; /* Makes it responsive on very small screens */
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .flatpickr-calendar {
+        max-width: 400px; /* Medium screens, like tablets */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .flatpickr-calendar {
+        max-width: 500px; /* Larger tablets or small laptops */
+    }
+}
+
+@media (min-width: 1024px) {
+    .flatpickr-calendar {
+        max-width: 600px; /* Desktops */
+    }
+}
+
+
+#create-checklist-btn {
+  background-color: #0A62D0; /* 기본 배경색 */
+  color: #FFFFFF; /* 글자 색 */
+  font-size: 16px; /* 글자 크기 */
+  padding: 12px 24px; /* 버튼 안의 여백 */
+  border-radius: 10px; /* 둥근 모서리 */
+  border: none; /* 기본 테두리 제거 */
+  cursor: pointer; /* 클릭 시 커서 변경 */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 전환 효과 */
+  width: 100%; /* 버튼의 너비를 부모 요소에 맞추기 */
+  max-width: 280px; /* 버튼의 최대 너비 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  font-family: 'Pretendard', sans-serif; /* Pretendard 폰트 사용 */
+}
+
+/* 버튼에 마우스를 올렸을 때 색상 변화 및 위로 살짝 올라가는 효과 */
+#create-checklist-btn:hover {
+  background-color: #007bff; /* 마우스 오버 시 배경색 */
+  transform: translateY(-2px); /* 버튼이 살짝 위로 올라가는 효과 */
+}
+
+/* 버튼 클릭 시 아래로 밀리는 효과 */
+#create-checklist-btn:active {
+  background-color: #0056b3; /* 클릭 시 배경색 */
+  transform: translateY(2px); /* 버튼이 아래로 밀리는 효과 */
+}
+
+/* 버튼 비활성화 상태 */
+#create-checklist-btn:disabled {
+  background-color: #ccc; /* 비활성화된 버튼의 배경색 */
+  cursor: not-allowed; /* 비활성화된 버튼에 커서 변경 */
 }

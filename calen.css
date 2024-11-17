@@ -6,13 +6,36 @@
   font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
 }
 
-body {
+/* body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+} */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+   /* 화면 전체 높이를 채우기 위해 설정 */
+  background-color: #ffffff;
+  margin: 0; /* 추가적인 여백 제거 */
 }
 
+
+.container {
+  width: 393px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+}
+
+/* header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
 header {
   position: fixed;
   top: 0;
@@ -20,10 +43,10 @@ header {
   background-color: #ffffff;
   padding: 10px 0;
   display: flex;
+  flex-direction: column; /* 세로 정렬로 변경 */
   align-items: center;
   justify-content: center;
 }
-
 
 
 header h1 {
@@ -33,108 +56,111 @@ header h1 {
 }
 
 
+
 form {
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   width: 314px;
-  margin-top: 100px; 
+  margin-top: 200px; 
 }
 
 form h2 {
-  font-size: 20px;
+  font-size: 28px;
   color: #414141;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 
 
-form input[type="submit"] {
-  background-color: #0A62D0;
-  color: #FFFFFF;
-  height: 43px;
-  width: 80%;
-  border-radius: 10px;
+
+.date-range {
+  font-size: 12px;
+  color: gray;
+}
+
+.notice-box {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  color: #333;
+  text-align: center;
   cursor: pointer;
   margin-top: 20px;
 }
-.left-align {
-  width: 100%;
-  text-align: left; /* 왼쪽 정렬 */
-  margin-left: 25%; /* 필요한 경우 왼쪽 여백 추가 */
-}
 
-
-
-form p a:hover {
-  color: #0056b3; /* 마우스 오버 시 색상 변경 (선택사항) */
-}
-
-/* Center the calendar container and adjust width for smaller screens */
-.calendar-container {
+.weather {
     display: flex;
-    justify-content: center;
-    margin-top: 16px;
-    padding: 0 16px; /* Adds some padding to prevent it from touching edges on small screens */
-    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    overflow-x: scroll;
+  }
+  
+  .weather .day {
+    text-align: center;
+    width: 50px;
+  }
+
+.checklist {
+  margin-top: 20px;
 }
 
-/* Adjust the calendar size and styling */
-.flatpickr-calendar {
-    background-color: #95bade;
-    border-radius: 9px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Default to full width */
-    max-width: 100%; /* Ensures it doesn't exceed container width */
+.checklist h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-/* Selected date style */
-.flatpickr-day.selected {
+.category h3 {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.category ul {
+  list-style: none;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+.category li {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.add-item {
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.category {
+    margin: 20px 0;
+}
+
+.add-item {
+    margin-top: 10px;
+    display: block;
     background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-/* Today's date style */
-.flatpickr-day.today {
-    border: 1px solid #007bff;
-    border-radius: 50%;
-}
-
-/* Weekday header style */
-.flatpickr-weekday {
-    font-weight: bold;
-    color: #333;
-}
-
-
-/* Hover style for specific dates */
-.flatpickr-day:hover {
-    background-color: #e0f0ff;
-}
-
-/* Responsive adjustments for calendar size and centering */
-@media (max-width: 480px) {
-    .flatpickr-calendar {
-        max-width: 90vw; /* Makes it responsive on very small screens */
-    }
-}
-
-@media (min-width: 480px) and (max-width: 768px) {
-    .flatpickr-calendar {
-        max-width: 400px; /* Medium screens, like tablets */
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .flatpickr-calendar {
-        max-width: 500px; /* Larger tablets or small laptops */
-    }
-}
-
-@media (min-width: 1024px) {
-    .flatpickr-calendar {
-        max-width: 600px; /* Desktops */
-    }
+.add-item:hover {
+    background-color: #0056b3;
 }

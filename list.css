@@ -54,63 +54,111 @@ form h2 {
   margin-bottom: 40px;
 }
 
-  .checklist-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 15px;
-    
-  }
+/* 체크리스트 카드 컨테이너 */
+.checklist-container {
+  /* display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 15px;
+  max-width: 1200px;  최대 너비 설정 
+  width: 100%;
+  margin-top: 30px; */
+  display: flex;
+  flex-direction: column; /* 세로 방향 정렬 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+   /* 화면 전체 높이 사용 min-height: 100vh;*/
+  gap: 20px; /* 카드 간 간격 */
   
-  .checklist-card {
-    position: relative; /* Position relative to hold overlay and text */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    border-radius: 10px;
-    color: #414141;
-    font-size: 16px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .checklist-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
-    z-index: 1;
-  }
-  
-  .checklist-card p, .checklist-card span {
-    position: relative;
-    z-index: 2; /* Ensure text appears above the overlay */
-    margin: 0;
-  }
-  
-  .checklist-card p {
-    font-weight: bold;
-  }
-  
-  .checklist-card span {
-    font-size: 14px;
-  }
-  
-  .add-checklist-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    border-radius: 10px;
-    background-color: #ddd;
-    color: #ffffff;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
+   /* 여백 추가 padding: 20px; */
+}
+
+
+/* 체크리스트 카드 스타일 */
+.checklist-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 344px; /* 고정된 너비 */
+  height: 70px; /* 고정된 높이 */
+  border-radius: 10px; /* 둥근 모서리 */
+  color: #ffffff; /* 글자 색을 흰색으로 */
+  font-size: 16px; /* 기본 글자 크기 */
+  overflow: hidden;
+  background-color: #79bbf4; /* 배경색 (예: 회색) */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 호버 효과 */
+  margin: 10px 0; /* 카드 간 간격 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 카드 위에 오버레이 추가 (배경 색상 덮개) */
+.checklist-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 149, 198, 0.3); /* 덮개 투명도 */
+  z-index: 1;
+}
+
+/* 카드 내 텍스트 스타일 */
+.checklist-card p,
+.checklist-card span {
+  position: relative;
+  z-index: 2; /* 텍스트가 덮개 위에 보이도록 */
+  margin: 0;
+  padding: 0 15px;
+  color: #ffffff; /* 글자색을 흰색으로 변경 */
+}
+
+/* 제목 글자 스타일 */
+.checklist-card p {
+  font-weight: bold;
+  font-size: 18px; /* 제목 글자 크기 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 */
+}
+
+/* 서브텍스트 스타일 */
+.checklist-card span {
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 서브텍스트에 그림자 */
+}
+
+/* 카드 호버 효과 */
+.checklist-card:hover {
+  transform: scale(1.05); /* 호버 시 카드 크기 확대 */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* 더 강한 그림자 효과 */
+}
+
+/* 추가 버튼 스타일 */
+.add-checklist-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 344px; /* 추가 버튼 너비를 카드와 동일하게 설정 */
+  height: 70px; /* 추가 버튼 높이를 카드와 동일하게 설정 */
+  border-radius: 10px; /* 둥근 모서리 */
+  background-color: #b6d1ee; /* 버튼 배경색 (파란색) */
+  color: #ffffff; /* 버튼 글자색 (흰색) */
+  font-size: 24px; /* 버튼 글자 크기 */
+  font-weight: bold; /* 버튼 글자 두께 */
+  cursor: pointer; /* 마우스를 올리면 클릭 가능한 상태로 표시 */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* 버튼의 효과 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 추가 버튼 호버 효과 */
+.add-checklist-card:hover {
+  background-color: #0056b3; /* 호버 시 배경색 변경 */
+  transform: scale(1.05); /* 호버 시 버튼 크기 확대 */
+}
+
+/* 추가 버튼 클릭 시 효과 */
+.add-checklist-card:active {
+  background-color: #003f87; /* 클릭 시 배경색 변경 */
+  transform: scale(0.95); /* 클릭 시 버튼 축소 */
+}

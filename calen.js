@@ -16,10 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     button.className = "create-checklist-button";
                     
                     // Optional: Add an event listener for the button
-                    button.addEventListener("click", function () {
-                        alert("Checklist created for: " + selectedDates[0].toLocaleDateString() + " to " + selectedDates[1].toLocaleDateString());
-                        // Add any additional logic for the checklist creation here
-                    });
+                    // button.addEventListener("click", function () {
+                    //     button.setAttribute('onclick', "location.href='list3.html'");
+                    // });
+                    
+                    button.type = "button";  // 폼 제출 방지
+                    button.setAttribute("onclick", "location.href='list3.html'");
 
                     // Append the button to the button container
                     buttonContainer.appendChild(button);

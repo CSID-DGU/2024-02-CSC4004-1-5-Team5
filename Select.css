@@ -1,0 +1,195 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* 상단부터 배치 */
+  min-height: 100vh; /* 화면 전체 높이를 채우기 위해 설정 */
+  background-color: #ffffff;
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* 다른 요소 위에 표시 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 28px;
+  color: #414141;
+  font-weight: 800;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 375px;
+  padding-top: 60px; /* 헤더 높이만큼 여백 추가 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 314px;
+  margin-top: 20px;
+}
+
+form h2 {
+  font-size: 20px;
+  color: #414141;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+form h3 {
+  font-size: 12px;
+  color: #414141;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* .content {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+} */
+.content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* 세로로 배치 */
+  align-items: center; /* 중앙 정렬 */
+  width: 100%;
+  position: relative; /* 추천 목록을 입력 칸 아래로 배치하기 위해 필요 */
+}
+/* .search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #969292;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #ffffff;
+} */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #969292;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #ffffff;
+  width: 100%; /* 입력 칸 크기 고정 */
+  max-width: 314px; /* form과 같은 크기로 제한 */
+  position: relative; /* 추천 목록의 기준점 설정 */
+  z-index: 1; /* 추천 목록 위에 나타나지 않도록 설정 */
+}
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+.search-button {
+  font-size: 18px;
+  color: #888888;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ /* .suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 200px; 
+  overflow-y: auto;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 100;
+} 
+ */
+
+  /* .suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 200px; 
+  overflow-y: auto;
+  background-color: #fff;
+  width: 100%;
+  max-width: 314px; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: calc(100% + 8px); 
+  left: 0;
+  z-index: 2; 
+}  */
+
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 200px; /* 스크롤이 필요한 경우를 대비 */
+  overflow-y: auto;
+  background-color: #fff;
+  width: 100%;
+  max-width: 314px; /* form과 같은 크기로 제한 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: calc(100% + 8px); /* 입력 칸 아래로 약간 띄우기 */
+  left: 50%; /* 입력 칸의 중앙 위치 */
+  transform: translateX(-50%); /* 50% 왼쪽으로 이동시켜 정확히 중앙에 맞추기 */
+  z-index: 2; /* 입력 칸 위로 표시 */
+}
+
+
+.suggestion-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* .selected-destination {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #414141;
+} */
+.selected-destination {
+  font-size: 16px;
+  color: #414141;
+  margin-bottom: 10px; /* 입력 칸과의 간격 */
+  text-align: center; /* 중앙 정렬 */
+  width: 100%;
+}

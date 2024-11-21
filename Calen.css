@@ -1,0 +1,39 @@
+.calen-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+form h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.calendar {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.create-checklist-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.create-checklist-button:hover {
+  background-color: #0056b3;
+}

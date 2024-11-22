@@ -116,11 +116,31 @@ const DestinationSelect = () => {
     console.log(`선택된 여행지: { country: '${suggestion.country}', city: '${suggestion.city}' }`);
   };
 
+
+  // Handle the back button click
+  const handleBackClick = () => {
+  //navigate("/previous-page"); // Replace '/previous-page' with the actual path you want
+  };
+
+  // Handle the delete button click
+  const handleDeleteClick = () => {
+  //navigate("/delete-page"); // Replace '/delete-page' with the actual path you want
+  };
+
+
+
+
   return (
     <div className="container">
+      {
       <header>
-        <h1>새로운 체크리스트</h1>
+  <   img src="back.png" alt="Back" onClick={() => window.location.href = '/back'} />
+      <h1>새로운 체크리스트</h1>
+      <img src="delete.png" alt="Delete" onClick={() => window.location.href = '/delete'} />
       </header>
+      }
+
+      
       <form>
         <h2>여행지를 선택해 주세요</h2>
         <h3>여행 목적지(도시 이름)를 검색 목록에서 선택해 주세요.</h3>

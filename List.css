@@ -13,15 +13,11 @@ body {
   justify-content: center;
 }
 
-/* header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #ffffff;
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header img {
+  
+  cursor: pointer; /* 클릭 가능하게 설정 */
+  margin-left: 25px; /* 왼쪽 이미지 25px 떨어지도록 설정 */
+  margin-right: 25px; /* 오른쪽 이미지 25px 떨어지도록 설정 */
 }
 
 header .logo {
@@ -30,12 +26,9 @@ header .logo {
   margin-right: -15px;
 }
 
-header h1 {
-  font-size: 28px;
-  color: #414141;
-  font-weight: 800;
-} */
 header {
+  margin-top: 20px; 
+
   position: fixed;
   top: 0;
   left: 0;
@@ -43,10 +36,12 @@ header {
   background-color: #ffffff;
   padding: 10px 0;
   display: flex;
-  justify-content: center; /* 가로 중앙 정렬 */
+  justify-content: space-between; /* 요소를 양 끝으로 배치 */
   align-items: center;     /* 세로 중앙 정렬 */
-  gap: 10px;               /* 로고와 텍스트 간 간격 */
+                 
   z-index: 1000;           /* 다른 요소들 위로 올려줌 */
+
+ 
 }
 
 header .logo {
@@ -97,7 +92,7 @@ form h2 {
   color: #ffffff;
   font-size: 16px;
   overflow: hidden;
-  background-color: #79bbf4;
+  background-color: #0A62D0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 10px 0;
@@ -147,8 +142,8 @@ form h2 {
   width: 344px;
   height: 70px;
   border-radius: 10px;
-  background-color: #b6d1ee;
-  color: #ffffff;
+  color: #DEDEDE;
+  border: 2px solid #DEDEDE;
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
@@ -157,7 +152,8 @@ form h2 {
 }
 
 .add-checklist-card:hover {
-  background-color: #0056b3;
+  background-color: #0A62D0;
+  color: #ffffff;
   transform: scale(1.05);
 }
 

@@ -1,3 +1,4 @@
+//Calen.js
 import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
@@ -27,38 +28,66 @@ const Calen = () => {
     console.log("도착 날짜:", arrivalDate);
     window.location.href = "list3.html"; // 원하는 페이지로 이동
   };
-  
 
   return (
-    <div className="calen-container">
-      <header>
+    <>
+      {/* Header를 calen-container 바깥에 위치 */}
+      {/* <header>
+        
         <h1>새로운 체크리스트</h1>
-      </header>
-      <form>
-        <h2>출발날짜와 도착날짜를 선택하세요.</h2>
-        <div className="calendar">
-          <Flatpickr
-            options={{
-              mode: "range",
-              inline: true,
-              dateFormat: "Y.m.d",
-            }}
-            onChange={handleDateChange}
-          />
-        </div>
-        {showButton && (
-          <div className="button-container">
-            <button
-              type="button"
-              className="create-checklist-button"
-              onClick={handleButtonClick}
-            >
-              체크리스트 생성
-            </button>
+        
+      </header> */}
+
+<header style={{ display: "table", width: "100%" }}>
+  <span style={{ display: "table-cell", textAlign: "left", width: "10%" }}>
+    <img
+      src="back.png"
+      alt="Back"
+      onClick={() => (window.location.href = "/back")}
+      style={{ width: "19.17px", height: "20px", cursor: "pointer" }}
+    />
+  </span>
+  <h1 style={{ display: "table-cell", textAlign: "center", fontSize: "21px", fontWeight: "800", color: "#414141" }}>
+    새로운 체크리스트
+  </h1>
+  <span style={{ display: "table-cell", textAlign: "right", width: "10%" }}>
+    <img
+      src="delete.png"
+      alt="Delete"
+      onClick={() => (window.location.href = "/delete")}
+      style={{ width: "19.17px", height: "20px", cursor: "pointer" }}
+    />
+  </span>
+</header>
+
+
+      <div className="calen-container">
+        <form>
+          <h2>출발날짜와 도착날짜를 선택하세요.</h2>
+          <div className="calendar">
+            <Flatpickr
+              options={{
+                mode: "range",
+                inline: true,
+                dateFormat: "Y.m.d",
+              }}
+              onChange={handleDateChange}
+            />
           </div>
-        )}
-      </form>
-    </div>
+          {showButton && (
+            <div className="button-container">
+              <button
+                type="button"
+                className="create-checklist-button"
+                onClick={handleButtonClick}
+              >
+                체크리스트 생성
+              </button>
+            </div>
+          )}
+        </form>
+      </div>
+    </>
   );
 };
 

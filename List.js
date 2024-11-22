@@ -47,8 +47,12 @@ const Calen = () => {
   return (
     <div>
       <header>
+      <img src="back.png" alt="back"  class="back" onclick="location.href='back.html'"/>
         <img src="logo.png" alt="logo" className="logo" />
         <h1>TRAVEL KIT</h1>
+        
+        <img src="menu.png" alt="menu" class="menu" onclick="location.href='menu.html'"/>
+    
       </header>
 
       <form>

@@ -5,8 +5,15 @@ import { useNavigate, useParams } from 'react-router-dom';
 function BoardList() {
     const { boardName } = useParams();  // URL에서 boardName을 가져옴
     const [posts, setPosts] = useState([]);  // 게시글 목록 상태
-    const [isWritingPost, setIsWritingPost] = useState(false);  // 글쓰기 상태
     const navigate = useNavigate();
+
+    // 쿠키에서 memberId 가져오기
+    const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    };
 
     // 게시판 데이터 불러오기
     useEffect(() => {
@@ -31,8 +38,16 @@ function BoardList() {
     }, [boardName]);  // boardName이 변경될 때마다 게시글을 새로 불러옵니다.
 
     const goToCreatePost = () => {
-        setIsWritingPost(true);
-        navigate(`/create-post`);
+        // 쿠키에서 memberId 확인
+        const memberId = getCookie('memberId');
+        console.log(document.cookie);  // 쿠키가 제대로 저장되었는지 확인
+
+        if (!memberId) {
+            alert('로그인 후 게시글을 작성할 수 있습니다.');
+            navigate('/testlogin');  // 로그인 페이지로 리다이렉트
+        } else {
+            navigate(`/create-post`);  // 게시글 작성 페이지로 이동
+        }
     };
 
     // 게시글 클릭 시 상세 페이지로 이동

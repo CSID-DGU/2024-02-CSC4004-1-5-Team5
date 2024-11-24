@@ -7,12 +7,20 @@ function Board() {
     const [selectedBoard, setSelectedBoard] = useState(null);
     const navigate = useNavigate();
 
+    /* // 나라별 분류 추가
     const selectBoard = (boardName) => {
         setSelectedBoard(boardName);
         // 게시판 선택 후 해당 게시판 페이지로 이동
         navigate(`/boardlist/${boardName}`);  // 나라명을 포함한 경로로 이동
     };
-
+    */
+    const selectBoard = (boardName) => {
+        setSelectedBoard(boardName);
+        // 게시판 선택 후 해당 게시판 페이지로 이동
+        navigate(`/boardlist/${boardName}`);  // boardName을 경로에 포함
+    };
+    
+    
     return (
         <div>
             <header>

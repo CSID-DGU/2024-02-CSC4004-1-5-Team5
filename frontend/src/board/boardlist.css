@@ -1,0 +1,237 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/* 기본 스타일 */
+body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+}
+
+#titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+#title {
+    flex: 1;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0A62D0;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#postDetailContainer {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.posts {
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #DCDCDC;
+    width: 80vw;
+    margin: 10px auto;
+}
+
+/* 댓글 */
+textarea, input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.delete-button {
+    background-color: #d9534f;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+.edit-button {
+    background-color: #0275d8;
+}
+
+.edit-button:hover {
+    background-color: #025aa5;
+}
+
+/* 게시글 작성 폼 */
+.createNlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+#createpost-btn {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+#createpost-btn:hover {
+    text-decoration: underline;
+    text-decoration-color: gray;
+}
+
+#alignBar {
+    margin-left: auto;
+}
+
+#formContainer, #formContainer div, #editFormContainer, #editFormContainer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#formContainer button, #editFormContainer button {
+    margin-top: 30vw;
+}
+
+#formContainer input, #editFormContainer input {
+    border: none;
+    outline: none;
+}
+
+#formContainer textarea, #editFormContainer textarea {
+    height: 90vw;
+}
+
+#countHeart {
+    padding-left: 10px;
+    text-align: right;
+    display: block;
+}
+#mainContainer2 {
+    position: fixed;      /* 요소를 고정 위치로 설정 */
+    top: 50px;               /* 화면의 최상단에 위치 */
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white; /* 배경색을 설정하여 다른 요소와 겹쳐도 보이도록 */
+}
+
+/* Search and Post List Styles */
+.searchContainer {
+    display: flex;
+    background-color: #F6F6F6;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+#search {
+    background-color: #F6F6F6;
+    border-color: #F6F6F6;
+    font-size: 18px;
+    padding: 5px;
+    resize: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 80%;
+    height: 25px;
+}
+
+#search-btn {
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: #F6F6F6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#search:focus {
+    border: none;
+    outline: none;
+}
+
+/* Post List */
+#postListContainer {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    flex-direction: column; /* 자식 요소들을 세로로 배치 */
+}
+
+
+#postList {
+    list-style: none;
+    padding: 0;
+}
+
+#postList li {
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#postList li span {
+    display: block;
+    margin-top: 5px;
+}

@@ -24,7 +24,8 @@ function App() {
                     <Route path="/menu1" element={<Menu1 />} />
                     <Route path="/menu1" element={<Menu2 />} />
                     <Route path="/board" element={<Board />} />
-                    <Route path="/boardList/:boardName" element={<BoardList />} />
+                    <Route path="/boardList/" element={<BoardList />} />
+                    <Route path="/boardlist/:boardName" element={<BoardList />} />
                 </Routes>
         </Router>
     );

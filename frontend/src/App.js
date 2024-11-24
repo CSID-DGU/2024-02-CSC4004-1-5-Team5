@@ -8,6 +8,8 @@ import SelectPage from './select/select'
 import CalenPage from './calen/calen'
 import Menu1 from "./menu/menu1";
 import Menu2 from "./menu/menu2";
+import Board from "./board/board";
+import BoardList from "./board/boardlist";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/menu1" element={<Menu1 />} />
                     <Route path="/menu1" element={<Menu2 />} />
+                    <Route path="/board" element={<Board />} />
+                    <Route path="/boardList/:boardName" element={<BoardList />} />
                 </Routes>
         </Router>
     );

@@ -15,6 +15,7 @@ import TestLogin from "./board/testlogin";
 import BoardList from "./board/boardlist";
 import CreatePost from "./board/create-post";
 import EditPost from "./board/edit-post";
+import HotPosts from "./board/hotpostlist";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/posts/:postId" element={<Post />} />
                     <Route path="/boardlist/:boardName" element={<BoardList />} />
                     <Route path="/create-post" element={<CreatePost />} />
+                    <Route path="/hotposts" element={<HotPosts />} />
                     <Route path="/edit-post/:postId" element={<EditPost />} />
                     
 

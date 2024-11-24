@@ -43,7 +43,7 @@ function Board() {
                         <img src="png/chats.png" alt="chats" />
                         <button>댓글 단 글</button>
                     </span>
-                    <span className="postsList" onClick={() => alert('BEST 게시글')}>
+                    <span className="postsList" onClick={() => navigate('/hotposts')}>
                         <img src="png/bestpost.png" alt="bestpost" />
                         <button>BEST 게시글</button>
                     </span>

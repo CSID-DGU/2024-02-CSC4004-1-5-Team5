@@ -1,0 +1,18 @@
+#postDetailContainer{
+    position: fixed;      /* 요소를 고정 위치로 설정 */
+    top: 50px;               /* 화면의 최상단에 위치 */
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white; /* 배경색을 설정하여 다른 요소와 겹쳐도 보이도록 */
+}
+
+#postDetailContainer div{
+    margin-bottom: 20px;
+}
+
+#postContentDetail{
+    margin-bottom: 40px;
+}

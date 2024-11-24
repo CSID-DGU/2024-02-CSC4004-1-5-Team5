@@ -35,6 +35,11 @@ function BoardList() {
         navigate(`/create-post`);
     };
 
+    // 게시글 클릭 시 상세 페이지로 이동
+    const handlePostClick = (postId) => {
+        navigate(`/posts/${postId}`);  // 게시글 ID를 포함한 URL로 이동
+    };
+
     return (
         <div>
             <header>
@@ -67,7 +72,7 @@ function BoardList() {
                     <ul id="postList">
                         {Array.isArray(posts) && posts.length > 0 ? (
                             posts.map((post, index) => (
-                                <li key={index}>
+                                <li key={post.id} onClick={() => handlePostClick(post.id)} style={{ cursor: 'pointer' }}>
                                     <span style={{ fontSize: '20px', fontWeight: 'bold' }}>{post.title}</span>
                                     <span style={{ display: 'block', marginTop: '5px' }}>
                                         좋아요: {post.likes}

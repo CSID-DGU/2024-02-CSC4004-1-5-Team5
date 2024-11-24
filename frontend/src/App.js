@@ -9,6 +9,7 @@ import CalenPage from './calen/calen'
 import Menu1 from "./menu/menu1";
 import Menu2 from "./menu/menu2";
 import Board from "./board/board";
+import Post from "./board/post";
 import BoardList from "./board/boardlist";
 
 function App() {
@@ -24,8 +25,10 @@ function App() {
                     <Route path="/menu1" element={<Menu1 />} />
                     <Route path="/menu1" element={<Menu2 />} />
                     <Route path="/board" element={<Board />} />
-                    <Route path="/boardList/" element={<BoardList />} />
+                    <Route path="/posts/:postId" element={<Post />} />
                     <Route path="/boardlist/:boardName" element={<BoardList />} />
+
+
                 </Routes>
         </Router>
     );

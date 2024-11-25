@@ -8,7 +8,7 @@ function HotPosts() {
 
     // 인기 게시글 데이터 불러오기
     useEffect(() => {
-        fetch('/popular')  // 인기 게시글을 불러오는 API 호출
+        fetch('posts/popular')  // 인기 게시글을 불러오는 API 호출
             .then(response => {
                 if (!response.ok) {
                     throw new Error('인기 게시글을 불러오는 데 실패했습니다.');

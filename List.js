@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import './List.css'; // Import the CSS file
-//import { useHistory } from "react-router-dom"; // 페이지 이동을 위한 useHistory 훅 사용
+// import { useHistory } from "react-router-dom"; // 페이지 이동을 위한 useHistory 훅 사용
 
 const Calen = () => {
   const [checklistData, setChecklistData] = useState([]);
-  //const history = useHistory();
+  // const history = useHistory();
 
   // 백엔드에서 데이터를 가져오는 함수
   useEffect(() => {
@@ -41,21 +41,19 @@ const Calen = () => {
 
   // 새로운 체크리스트 페이지로 이동
   const handleAddChecklist = () => {
-   // history.push("/select1"); // + 버튼 클릭 시 다른 페이지로 이동
+    // history.push("/select1"); // + 버튼 클릭 시 다른 페이지로 이동
   };
 
   return (
     <div>
-      <header>
-      <img src="back.png" alt="back"  class="back" onclick="location.href='back.html'"/>
-        <img src="logo.png" alt="logo" className="logo" />
+      <header className="list-header">
+        <img src="back.png" alt="back" className="back" onClick={() => window.location.href = 'back.html'} />
+        <img src="logo.png" alt="logo" className="list-logo" />
         <h1>TRAVEL KIT</h1>
-        
-        <img src="menu.png" alt="menu" class="menu" onclick="location.href='menu.html'"/>
-    
+        <img src="menu.png" alt="menu" className="menu" onClick={() => window.location.href = 'menu.html'} />
       </header>
 
-      <form>
+      <form className="list-form">
         <h2>나의 체크리스트</h2>
 
         <div className="checklist-container">

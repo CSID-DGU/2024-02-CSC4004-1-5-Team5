@@ -131,40 +131,54 @@ const DestinationSelect = () => {
 
 
   return (
-    <div className="container">
-      {
-      <header>
-  <   img src="back.png" alt="Back" onClick={() => window.location.href = '/back'} />
-      <h1>새로운 체크리스트</h1>
-      <img src="delete.png" alt="Delete" onClick={() => window.location.href = '/delete'} />
+    <div className="select-container">
+      <header className="select-header">
+        <img
+          src="back.png"
+          alt="Back"
+          className="select-back-icon"
+          onClick={() => window.location.href = '/back'}
+        />
+        <h1 className="select-title">새로운 체크리스트</h1>
+        <img
+          src="delete.png"
+          alt="Delete"
+          className="select-delete-icon"
+          onClick={() => window.location.href = '/delete'}
+        />
       </header>
-      }
 
-      
-      <form>
-        <h2>여행지를 선택해 주세요</h2>
-        <h3>여행 목적지(도시 이름)를 검색 목록에서 선택해 주세요.</h3>
+      <form className="select-form">
+        <h2 className="select-subtitle">여행지를 선택해 주세요</h2>
+        <h3 className="select-instruction">
+          여행 목적지(도시 이름)를 검색 목록에서 선택해 주세요.
+        </h3>
       </form>
-      <section className="content">
-        {selected && <p className="selected-destination">선택된 여행지: {selected}</p>}
-        <div className="search-box">
+
+      <section className="select-content">
+        {selected && (
+          <p className="select-selected-destination">
+            선택된 여행지: {selected}
+          </p>
+        )}
+        <div className="select-search-box">
           <input
             type="text"
-            className="search-input"
+            className="select-search-input"
             placeholder="여행 도시를 입력하세요."
             value={query}
             onChange={handleInputChange}
           />
-          <button type="button" className="search-button">
+          <button type="button" className="select-search-button">
             🔍
           </button>
         </div>
         {suggestions.length > 0 && (
-          <ul className="suggestions-list">
+          <ul className="select-suggestions-list">
             {suggestions.map((suggestion, index) => (
               <li
                 key={index}
-                className="suggestion-item"
+                className="select-suggestion-item"
                 onClick={() => handleSuggestionClick(suggestion)}
               >
                 {suggestion.display}

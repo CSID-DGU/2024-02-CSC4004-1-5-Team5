@@ -1,5 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
+/* 기본 스타일 */
 * {
   margin: 0;
   padding: 0;
@@ -13,22 +14,9 @@ body {
   justify-content: center;
 }
 
-header img {
-  
-  cursor: pointer; /* 클릭 가능하게 설정 */
-  margin-left: 25px; /* 왼쪽 이미지 25px 떨어지도록 설정 */
-  margin-right: 25px; /* 오른쪽 이미지 25px 떨어지도록 설정 */
-}
-
-header .logo {
-  width: 40px;
-  height: auto;
-  margin-right: -15px;
-}
-
-header {
-  margin-top: 20px; 
-
+/* 헤더 스타일 */
+.list-header {
+  margin-top: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,28 +24,32 @@ header {
   background-color: #ffffff;
   padding: 10px 0;
   display: flex;
-  justify-content: space-between; /* 요소를 양 끝으로 배치 */
-  align-items: center;     /* 세로 중앙 정렬 */
-                 
-  z-index: 1000;           /* 다른 요소들 위로 올려줌 */
-
- 
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
-header .logo {
-  width: 40px;  /* 로고의 크기 */
+.list-header img {
+  cursor: pointer;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.list-header .list-logo {
+  width: 40px;
   height: auto;
 }
 
-header h1 {
+.list-header h1 {
   font-size: 28px;
   color: #414141;
   font-weight: 800;
-  text-align: center;  /* 텍스트 중앙 정렬 */
-  margin: 0;           /* 불필요한 여백 제거 */
+  text-align: center;
+  margin: 0;
 }
 
-form {
+/* 폼 스타일 */
+.list-form {
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
@@ -67,12 +59,13 @@ form {
   margin-top: 200px;
 }
 
-form h2 {
+.list-form h2 {
   font-size: 28px;
   color: #414141;
   margin-bottom: 40px;
 }
 
+/* 체크리스트 컨테이너 */
 .checklist-container {
   display: flex;
   flex-direction: column;
@@ -81,6 +74,7 @@ form h2 {
   gap: 20px;
 }
 
+/* 체크리스트 카드 */
 .checklist-card {
   position: relative;
   display: flex;
@@ -135,6 +129,7 @@ form h2 {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* + 버튼 */
 .add-checklist-card {
   display: flex;
   justify-content: center;

@@ -8,12 +8,27 @@ function EditPost() {
     const navigate = useNavigate();
 
     // 쿠키에서 memberId 가져오기
+    /*
     const getCookie = (name) => {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
         return null;
     };
+    // 쿠키에서 memberId 가져오기
+    const memberId = getCookie('memberId');
+    if (!memberId) {
+        alert('로그인이 필요합니다.');
+        return;
+    }
+    
+    // 수정된 게시글 데이터 생성
+    */
+   const updatedPostData = {
+       title: title.trim(),
+       content: content.trim(),
+       //member: { id: memberId },  // 쿠키에서 가져온 memberId를 포함
+   };
 
     // 게시글 데이터 불러오기
     useEffect(() => {
@@ -41,19 +56,6 @@ function EditPost() {
             return;
         }
 
-        // 쿠키에서 memberId 가져오기
-        const memberId = getCookie('memberId');
-        if (!memberId) {
-            alert('로그인이 필요합니다.');
-            return;
-        }
-
-        // 수정된 게시글 데이터 생성
-        const updatedPostData = {
-            title: title.trim(),
-            content: content.trim(),
-            member: { id: memberId },  // 쿠키에서 가져온 memberId를 포함
-        };
 
         // 서버에 수정된 게시글 전송
         fetch(`/posts/${postId}`, {  // 게시글 수정 요청 (PUT)

@@ -1,40 +1,55 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
+/* 전역 스타일 */
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif; /* Pretendard 폰트 적용 */
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: #ffffff; /* 배경 흰색 */
+  color: #414141;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 헤더 섹션 */
 header {
   position: fixed;
-  top: 15px;
+  top: 0;
   width: 100%;
   background-color: #ffffff;
-  padding: 10px 0;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 헤더 하단 그림자 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
 }
 
 header .logo {
-  width: 40px; /* 로고의 크기를 적절히 조정 */
+  width: 40px; /* 로고 크기 */
   height: auto;
   margin-right: -15px; /* 텍스트와 로고 사이 간격 */
 }
 
 header h1 {
   font-size: 28px;
-  color: #414141;
   font-weight: 800;
+  color: #414141;
 }
 
 header .delete {
@@ -46,7 +61,9 @@ header .delete {
   cursor: pointer; /* 마우스 커서 변경 */
 }
 
+
 header .menu {
+  width: 30px; /* 메뉴 아이콘 크기 */
   color: #0A62D0;
   position: absolute; /* 절대 위치 지정 */
   right: 25px; /* 오른쪽에서 25px 떨어진 위치 */
@@ -55,247 +72,146 @@ header .menu {
   cursor: pointer; /* 마우스 커서 변경 */
 }
 
-header .back {
-  color: #0A62D0;
-  position: absolute; /* 절대 위치 지정 */
-  left: 25px; /* 왼쪽에서 25px 떨어진 위치 */
-  top: 50%; /* 세로 가운데 정렬 */
-  transform: translateY(-50%); /* 세로 가운데 정렬 보정 */
-  cursor: pointer; /* 마우스 커서 변경 */
-}
-
-
-form {
-  padding: 20px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  width: 314px;
-  margin-top: 170px; 
-}
-
-#login-form {
-  padding: 20px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  width: 314px;
-  margin-top: 200px; 
-}
-
-form h2 {
-  font-size: 28px;
-  color: #414141;
-  margin-bottom: 40px;
-}
-
-#login-form h2 {
-  font-size: 28px;
-  color: #414141;
-  margin-bottom: 55px;
-}
-
-form input[type="text"],
-form input[type="password"],
-form input[type="email"] {
-  border: solid 1px #414141;
-  padding: 10px;
-  margin: 15px 0;
-  width: 70%;
-  border-radius: 10px;
-}
-
-#login-form input[type="text"],
-#login-form input[type="password"]{
-  border: solid 1px #414141;
-  padding: 10px;
-  margin: 4px 0;
-  width: 70%;
-  border-radius: 10px;
-}
-
-form input[type="submit"] {
-  background-color: #0A62D0;
-  color: #FFFFFF;
-  height: 43px;
-  width: 80%;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-.left-align {
-  width: 100%;
-  text-align: left; /* 왼쪽 정렬 */
-  margin-left: 25%; /* 필요한 경우 왼쪽 여백 추가 */
-}
-
-/* 회원가입 링크 스타일 */
-form p {
-  margin-top: 30px; /* 로그인 버튼과의 간격을 조정 */
-}
-
-form p a {
-  color: #414141; /* 원하는 색상으로 변경 (예: 파란색) */
-  text-decoration: none; /* 밑줄 제거 */
-  font-size: 13px; /* 텍스트 크기 조정 */
-}
-
-form p a:hover {
-  color: #0056b3; /* 마우스 오버 시 색상 변경 (선택사항) */
-}
-
-h3 {
-  padding: 20px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  width: 314px;
-  margin-top: 150px; 
-  color: #414141;
-}
-
-
-
-h3 a {
-  color: #414141; /* 원하는 색상으로 변경 (예: 파란색) */
-  text-decoration: none; /* 밑줄 제거 */
-  font-size: 20px; /* 텍스트 크기 조정 */
-}
-
-.fir h1 {
-  font-size: 48px;
-  margin-top: 190px;
-  margin-bottom: 35px;
-  color: #414141;
-}
-
+/* 광고 이미지 */
 .adv {
-  display: block; /* 이미지 블록 요소로 설정 */
-  margin: 80px auto 0; /* 위쪽에 10px 마진, 아래쪽은 없음 */
+  width: 100%;
+  height: auto;
+  margin-top: 95px; /* 헤더 아래 여백 */
 }
 
+/* 최근 체크리스트 섹션 */
 .main {
-  width: 100%; /* div의 너비를 100%로 설정 */
-  display: flex; /* 요소들을 가로로 배치 */
-  justify-content: space-between; /* 양쪽 끝으로 배치 */
-  align-items: center; /* 수직 가운데 정렬 */
-  padding: 20px 0px; /* 좌우 패딩 추가 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
 }
 
 .checklist-title {
-  font-size: 20px; /* 원하는 폰트 크기 */
-  color: #414141; /* 텍스트 색상 */
-  margin-left: 24px;
-}
-
-.more a{
-  font-size: 14px;
-  color: #9A9A9A; /* "더보기" 텍스트 색상 */
-  cursor: pointer; /* 마우스 커서 변경 */
-  margin-right: 24px;
-  text-decoration: none;
-}
-
-
-
-.checklist-section {
-  margin-top: 20px;
-  padding: 20px;
-}
-
-.section-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
 }
 
-.checklist-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.checklist-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.more a {
+  font-size: 14px;
+  color: #9A9A9A;
   cursor: pointer;
-  transition: transform 0.3s;
 }
 
-.checklist-item:hover {
-  transform: translateY(-5px);
-}
-
-.checklist-flag {
-  width: 60px;
-  height: 40px;
-  border-radius: 5px;
-}
-
-.checklist-name {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.add-checklist {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.add-button {
-  display: inline-block;
-  background-color: #ffffff;
-  color: #DEDEDE;
-  stroke: #DEDEDE;
-  font-size: 24px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 60px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.add-button:hover {
-  background-color: #084aad;
-}
-
+/* 인기 게시물 섹션 */
 .post-section {
-  margin: 20px auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between; /* 제목과 더보기 링크를 양쪽 정렬 */
+  align-items: center;
 }
 
 .section-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
+}
+
+.more2 a {
+  font-size: 14px;
+  color: #9A9A9A;
+  cursor: pointer;
 }
 
 .post-list {
   list-style: none;
   padding: 0;
+  margin: 20px 0;
 }
 
 .post-item {
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
   padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
   transition: background-color 0.3s;
-  cursor: pointer;
+}
+
+.post-item a {
+  text-decoration: none;
+  color: #414141;
+}
+
+.post-item a::before {
+  content: attr(data-id) ". "; /* ID를 출력하고 .을 추가 */
+  font-weight: bold;
 }
 
 .post-item:hover {
   background-color: #e0f7fa;
+}
+
+/* 체크리스트 섹션 */
+.checklist-section {
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap; /* 여러 줄로 배치 */
+  gap: 25px; /* 리스트 간의 간격 */
+  flex-wrap: nowrap; /* 한 줄에만 정렬 (가로 스크롤) */
+  overflow-x: auto; /* 가로 스크롤 활성화 */
+  max-width: 100%; /* 부모 요소의 너비를 넘지 않음 */
+}
+
+.checklist-list{
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  align-items: center; /* 중앙 정렬 */
+  justify-content: center;
+  width: 65px; /* 리스트 아이템 크기 */
+  height: 80px; /* 리스트 아이템 높이 */
+}
+
+.country-flag {
+  width: 60px; /* 국기 이미지 크기 */
+  height: 60px; /* 원형으로 보이도록 설정 */
+  border-radius: 50%; /* 원형 */
+  object-fit: cover; /* 이미지 비율 유지 */
+}
+
+.checklist-item p {
+  margin-top: 7px; /* 국기와 텍스트 간격 */
+  color: #000000; /* 텍스트 색상 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  font-size: 12px; /* 텍스트 크기 */
+}
+
+/* 체크리스트 추가 버튼 */
+.add-checklist {
+  display: flex; /* Flexbox 사용 */
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  width: 60px; /* 버튼 크기 */
+  height: 65px; /* 버튼 높이 (리스트와 동일) */
+}
+
+.add-button {
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  width: 60px; /* 버튼 크기 */
+  height: 60px; /* 버튼 크기 */
+  background-color: #ffffff;
+  color: #DEDEDE;
+  font-size: 24px;
+  border: 2px solid #DEDEDE;
+  border-radius: 50%; /* 버튼을 원형으로 설정 */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #3a6dab;
+  color: #ffffff;
 }

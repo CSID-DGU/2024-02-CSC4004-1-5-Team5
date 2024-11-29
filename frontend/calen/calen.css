@@ -1,0 +1,67 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* 상단부터 배치 */
+  min-height: 100vh; /* 화면 전체 높이를 채우기 위해 설정 */
+  background-color: #ffffff;
+  margin: 0;
+}
+
+/* Header 스타일 */
+.calen-header {
+  display: table;
+  width: 100%;
+  margin-top: 20px; /* 상단 여백 추가 */
+}
+
+.calen-header h1 {
+  font-size: 21px;
+  color: #414141;
+  font-weight: 800;
+  text-align: center;
+  flex-grow: 1; /* 텍스트가 가운데에 오도록 설정 */
+  margin: 0; /* 기본 여백 제거 */
+}
+
+/* Container 스타일 */
+.calen-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.calen-container form h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.calen-container .calendar {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.calen-container .button-container {
+  margin-top: 20px;
+}
+
+.calen-container .create-checklist-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.calen-container .create-checklist-button:hover {
+  background-color: #0056b3;
+}

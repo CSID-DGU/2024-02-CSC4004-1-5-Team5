@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <title>travel kit - 로그인</title>
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="/png/logo.png" alt="logo" class="logo">
+    <h1>TRAVEL KIT</h1>
+  </header>
+  
+  <form name="fo" method="get" onsubmit="return validateForm()">
+    <h2>로그인</h2>
+    <input type="text" id="username" size="15" placeholder="아이디"><br>
+    <input type="password" id="password" size="15" placeholder="비밀번호"><br>
+    <label class="left-align">
+    <input type="checkbox" id="stay-logged-in"> 로그인 상태 유지
+    </label><br>
+    <input type="submit" value="LOGIN">
+    <p id="error-message" style="color: red; display: none;"></p> <!-- 에러 메시지 표시 -->
+    <p><a href="signup.html">회원가입</a></p> <!-- 회원가입 페이지 링크 -->
+  </form>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Kit Checklist</title>
+    <link rel="stylesheet" href="check.css">
+</head>
+<body>
+<header>
+    <h1>모스크바</h1>
+    <p>2022.10.16 - 2022.10.24</p>
+
+    <div class="container">
+        <div class="notice-box" onclick="window.open('https://example.com', '_blank')">
+            안전 공지 내용
+        </div>
+
+        <div class="weather">
+            <div class="day">
+                <p>10/16</p>
+                <img src="sunny.png" alt="Sunny">
+                <p>8°</p>
+            </div>
+
+            <div class="day">
+                <p>10/17</p>
+                <img src="sunny.png" alt="Sunny">
+                <p>9°</p>
+            </div>
+
+            <div class="day">
+                <p>10/18</p>
+                <img src="cloudy.png" alt="Cloudy">
+                <p>9°</p>
+            </div>
+
+            <div class="day">
+                <p>10/19</p>
+                <img src="rain.png" alt="Rain">
+                <p>10°</p>
+            </div>
+        </div>
+
+        <br> <hr>
+    </div>
+
+
+</header>
+<div class="container">
+
+    <div class="checklist">
+        <h2>체크리스트</h2>
+        <div class="category">
+            <h3>
+                스킨케어
+                <button class="toggle-button">▼</button>
+            </h3>
+            <ul class="items hidden">
+                <li><input type="checkbox"> 스킨</li>
+                <li><input type="checkbox"> 앰플</li>
+                <li><input type="checkbox"> 화장솜</li>
+                <li><input type="checkbox"> 로션</li>
+                <li><input type="checkbox"> 바디로션</li>
+                <li><input type="checkbox"> 크림</li>
+            </ul>
+            <button class="add-item">+ 추가</button>
+
+            <h3>
+                옷
+                <button class="toggle-button">▼</button>
+            </h3>
+            <ul class="items hidden">
+                <li><input type="checkbox"> 맨투맨</li>
+                <li><input type="checkbox"> 청바지</li>
+                <li><input type="checkbox"> 운동화</li>
+
+            </ul>
+            <button class="add-item">+ 추가</button>
+
+            <h3>
+                화장품
+                <button class="toggle-button">▼</button>
+            </h3>
+            <ul class="items hidden">
+                <li><input type="checkbox"> 스킨</li>
+                <li><input type="checkbox"> 앰플</li>
+                <li><input type="checkbox"> 화장솜</li>
+                <li><input type="checkbox"> 로션</li>
+                <li><input type="checkbox"> 바디로션</li>
+                <li><input type="checkbox"> 크림</li>
+            </ul>
+            <button class="add-item">+ 추가</button>
+
+
+        </div>
+    </div>
+</div>
+<script src="check.js"></script>
+</body>
+</html>

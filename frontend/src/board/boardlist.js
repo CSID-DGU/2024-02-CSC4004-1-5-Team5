@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import Cookies from "js-cookie";
 import './boardlist.css';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function BoardList() {
-    const { boardName } = useParams();  // URL에서 boardName을 가져옴
-    const [posts, setPosts] = useState([]);  // 게시글 목록 상태
-    const [sortOrder, setSortOrder] = useState('1');  // 정렬 순서 (기본값: 최신순)
+    const { boardName } = useParams();
+    const [posts, setPosts] = useState([]); // 게시글 목록 상태
+    const [filteredPosts, setFilteredPosts] = useState([]); // 필터링된 게시글 목록 상태
+    const [sortOrder, setSortOrder] = useState('1'); // 정렬 기준
+    const [searchTerm, setSearchTerm] = useState(''); // 검색어 상태
     const navigate = useNavigate();
 
-    // 쿠키에서 memberId 가져오기
-    const getCookie = (name) => {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
-    };
-
-    // 게시판 데이터 불러오기
     useEffect(() => {
-        fetch(`/posts`)  // boardName을 포함한 경로로 요청
+        fetch(`/posts`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('게시글을 불러오는 데 실패했습니다.');
@@ -26,57 +20,75 @@ function BoardList() {
                 return response.json();
             })
             .then(posts => {
-                if (Array.isArray(posts)) {  // API 응답이 배열인지 확인
-                    // 정렬 처리
+                if (Array.isArray(posts)) {
                     const sortedPosts = sortPosts(posts, sortOrder);
-                    setPosts(sortedPosts);  // 정렬된 게시글 목록을 상태에 저장
+                    setPosts(sortedPosts);
+                    setFilteredPosts(sortedPosts); // 처음에는 전체 게시글을 필터링된 목록으로 설정
                 } else {
                     throw new Error('게시글 데이터가 배열이 아닙니다.');
                 }
             })
             .catch(error => {
                 console.error(error);
-                // 에러 처리 (예: 사용자에게 알림 표시)
             });
-    }, [boardName, sortOrder]);  // boardName이나 sortOrder가 변경될 때마다 게시글을 새로 불러옴
+    }, [boardName, sortOrder]);
 
-    // 정렬 함수
     const sortPosts = (posts, order) => {
         if (order === '1') {
-            // 최신순 (createdAt을 기준으로 정렬)
             return posts.sort((a, b) => {
-                const dateA = new Date(a.createdAt);  // createdAt을 Date 객체로 변환
-                const dateB = new Date(b.createdAt);  // createdAt을 Date 객체로 변환
-                return dateB - dateA;  // 최신순 정렬 (최근 날짜가 먼저 나오도록)
+                const dateA = new Date(a.createdAt);
+                const dateB = new Date(b.createdAt);
+                return dateB - dateA;
             });
         } else if (order === '2') {
-            // 인기순 (likes를 기준으로 정렬)
-            return posts.sort((a, b) => b.likes - a.likes);  // 좋아요 수로 내림차순 정렬
+            return posts.sort((a, b) => b.likes - a.likes);
         }
-        return posts;  // 기본적으로 정렬되지 않은 게시글
+        return posts;
     };
 
-    // 정렬 기준이 변경될 때 호출되는 함수
     const handleSortChange = (event) => {
-        setSortOrder(event.target.value);  // 새로운 정렬 기준으로 상태 업데이트
+        setSortOrder(event.target.value);
+    };
+
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value); // 검색어 상태 업데이트
+    };
+
+    const handleSearchClick = () => {
+        // 검색어와 게시글 제목을 비교하여 일치하는 게시글만 필터링
+        const filtered = posts.filter(post =>
+            post.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredPosts(filtered);
+        
+        setTimeout(() => {
+            const textArea = document.getElementById('search'); // textarea 요소를 가져옵니다
+            const currentText = textArea.value; // 현재 입력된 텍스트
+            textArea.value = currentText.slice(0, -1); // 마지막 문자를 지운다 (backspace 효과)
+            setSearchTerm(textArea.value); // 상태 업데이트
+        }, 100); // 잠시 기다린 후에 backspace 효과를 적용
+    };
+    
+    
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSearchClick(); // 엔터 키를 누르면 검색 클릭과 동일하게 동작
+        }
     };
 
     const goToCreatePost = () => {
-        // 쿠키에서 memberId 확인
-        const memberId = getCookie('memberId');
-        console.log(document.cookie);  // 쿠키가 제대로 저장되었는지 확인
+        const memberId = Cookies.get("userId");
 
         if (!memberId) {
             alert('로그인 후 게시글을 작성할 수 있습니다.');
-            navigate('/testlogin');  // 로그인 페이지로 리다이렉트
+            navigate('/login');
         } else {
-            navigate(`/create-post`);  // 게시글 작성 페이지로 이동
+            navigate(`/create-post`);
         }
     };
 
-    // 게시글 클릭 시 상세 페이지로 이동
     const handlePostClick = (postId) => {
-        navigate(`/posts/${postId}`);  // 게시글 ID를 포함한 URL로 이동
+        navigate(`/posts/${postId}`);
     };
 
     return (
@@ -88,15 +100,26 @@ function BoardList() {
                     src="/png/menu.png"
                     alt="menuicon"
                     className="menu"
-                    onClick={() => navigate('/menu1')} // 메뉴 페이지로 이동
+                    onClick={() => navigate('/menu1')}
                 />
             </header>
-                
-            <div id="mainContainer2">
-                <div id="postListContainer">
-                    <div className="searchContainer">
-                        <textarea id="search" placeholder="키워드를 입력하세요."></textarea>
-                        <img id="search-btn" src="/png/Search.png" alt="search" />
+
+            <div id="mainBD_container2">
+                <div id="postListBD_container">
+                    <div className="searchBD_container">
+                        <textarea
+                            id="search"
+                            placeholder="키워드를 입력하세요."
+                            value={searchTerm} // 입력된 검색어 상태를 textarea에 바인딩
+                            onChange={handleSearchChange} // 검색어 변경 시 상태 업데이트
+                            onKeyDown={handleKeyDown} // 엔터 키 감지
+                        />
+                        <img
+                            id="search-btn"
+                            src="/png/Search.png"
+                            alt="search"
+                            onClick={handleSearchClick} // 검색 버튼 클릭 시 필터링
+                        />
                     </div>
                     <div className="createNlist">
                         <div>
@@ -109,8 +132,8 @@ function BoardList() {
                         </select>
                     </div>
                     <ul id="postList">
-                        {Array.isArray(posts) && posts.length > 0 ? (
-                            posts.map((post) => (
+                        {Array.isArray(filteredPosts) && filteredPosts.length > 0 ? (
+                            filteredPosts.map((post) => (
                                 <li key={post.id} onClick={() => handlePostClick(post.id)} style={{ cursor: 'pointer' }}>
                                     <span style={{ fontSize: '20px', fontWeight: 'bold' }}>{post.title}</span>
                                     <span style={{ display: 'block', marginTop: '5px' }}>

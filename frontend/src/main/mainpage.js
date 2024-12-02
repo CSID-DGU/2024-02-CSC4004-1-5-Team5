@@ -30,6 +30,7 @@ function MainPage() {
     useEffect(() => {
         // 쿠키에서 userId 가져오기
         const userIdFromCookie = Cookies.get("userId");
+        console.log("쿠키에서 가져온 userId:", userIdFromCookie);
         if (userIdFromCookie) {
             setUserId(userIdFromCookie);
 
@@ -77,23 +78,23 @@ function MainPage() {
             {/* 체크리스트 섹션 */}
             <div className="checklist-section">
                 {limitedChecklists.map((checklist, index) => {
-                    const city = checklist.destination.city; // Get city name
-                    const country = cityToCountry(city); // Get corresponding country
-                    const flagImage = cityToImageFile(city); // Get country flag image
-                    const koreanCity = cityToKorean(city); // Convert city to Korean
+                    const city = checklist.destination.city;
+                    const country = cityToCountry(city);
+                    const flagImage = cityToImageFile(city);
+                    const koreanCity = cityToKorean(city);
                     return (
                         <div key={index} className="checklist-list">
                             <img
-                                src={`/png/${flagImage}`} // Display the country flag dynamically
+                                src={`/png/${flagImage}`}
                                 alt={country}
                                 className="country-flag"
                             />
-                            <p>{koreanCity}</p> {/* Display city name in Korean */}
+                            <p>{koreanCity}</p>
                         </div>
                     );
                 })}
                 <div className="checklist-list add-checklist">
-                    <a href="#checklist-create" className="add-button">
+                    <a href="/select" className="add-button">
                         +
                     </a>
                 </div>

@@ -6,7 +6,7 @@
   font-family: 'Pretendard', sans-serif;
 }
 
-body {
+.calen-body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,19 +18,48 @@ body {
 
 /* Header 스타일 */
 .calen-header {
-  display: table;
+  /*display: table;
   width: 100%;
-  margin-top: 20px; /* 상단 여백 추가 */
+  margin-top: 20px; 상단 여백 추가*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 20px;
+  margin-bottom: 30px; /* 간격 추가 */
 }
-
+/*
 .calen-header h1 {
   font-size: 21px;
   color: #414141;
   font-weight: 800;
   text-align: center;
-  flex-grow: 1; /* 텍스트가 가운데에 오도록 설정 */
-  margin: 0; /* 기본 여백 제거 */
+  flex-grow: 1; // 텍스트가 가운데에 오도록 설정 
+  margin: 0;   
 }
+*/
+
+.calen-header-title {
+  font-size: 21px;
+  color: #414141;
+  font-weight: 800;
+  text-align: center;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.calen-header-left,
+.calen-header-right {
+  width: 10%;
+}
+
+.calen-header-icon {
+  width: 19.17px;
+  height: 20px;
+  cursor: pointer;
+}
+
 
 /* Container 스타일 */
 .calen-container {

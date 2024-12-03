@@ -8,7 +8,7 @@ function Menu2({ onClose }) {
         navigate(-1);  // -1은 이전 페이지를 의미
     };
     return (
-        <div class="menubody">
+        <div className="menubody">
             <div>
                 <header>
                     <img src="/png/logo.png" alt="logo" className = "logo"/>
@@ -20,7 +20,7 @@ function Menu2({ onClose }) {
                         className = "delete"
                     />
                 </header>
-                    <h3 classname="menuh3">
+                    <h3 className="menuh3">
                         <a href="/mychecklist">나의 체크리스트</a>
                         <br />
                         <a href="/board">게시판</a>

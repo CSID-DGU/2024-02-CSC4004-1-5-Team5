@@ -29,9 +29,9 @@ function Menu1({ onClose }) {
         }
     };
     return (
-        <div classname="menubody">
+        <div className="menubody">
             <div>
-                <header classname="menuheader">
+                <header className="menuheader">
                     <img src="/png/logo.png" alt="logo" className = "logo"/>
                     <h1>TRAVEL KIT</h1>
                     <img
@@ -41,7 +41,7 @@ function Menu1({ onClose }) {
                         className = "delete"
                     />
                 </header>
-                <h3 classname="menuh3">
+                <h3 className="menuh3">
                     <a href="/mychecklist">나의 체크리스트</a>
                     <br/>
                     <br/>

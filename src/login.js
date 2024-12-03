@@ -42,7 +42,7 @@ function Login() {
   };
   return (
       <div>
-        <header classname="loginheader">
+        <header className="loginheader">
           <img src="/png/logo.png" alt="logo" className="logo" />
           <h1>TRAVEL KIT</h1>
           <img

@@ -1,15 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-/* 기본 스타일 */
-body {
-    font-family: 'Pretendard', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    color: #333;
-}
-
-#titleContainer {
+.board_overlay #titleContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,14 +8,14 @@ body {
     padding: 20px;
 }
 
-#title {
+.board_overlay #title {
     flex: 1;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
 }
 
-.container {
+.BD_container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
@@ -33,7 +24,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-button {
+.board_overlay button {
     padding: 10px 20px;
     background-color: #0A62D0;
     border-radius: 10px;
@@ -48,34 +39,25 @@ button {
     padding-right: 30px;
 }
 
-.posts {
+.board_overlay .posts {
     margin-top: 30px;
 }
 
-ul {
+.board_overlay ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
+.board_overlay li {
     padding: 15px;
     margin-bottom: 10px;
 }
 
-h2 {
+.board_overlay h2 {
     margin-bottom: 20px;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #DCDCDC;
-    width: 80vw;
-    margin: 10px auto;
-}
-
-/* 댓글 */
-textarea, input {
+.board_overlay textarea {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -84,28 +66,36 @@ textarea, input {
     font-size: 16px;
 }
 
-.form-container {
+.board_overlay input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.board_overlay .form-container {
     margin-top: 20px;
 }
 
-.delete-button {
+.board_overlay .delete-button {
     background-color: #d9534f;
 }
 
-.delete-button:hover {
+.board_overlay .delete-button:hover {
     background-color: #c9302c;
 }
 
-.edit-button {
+.board_overlay .edit-button {
     background-color: #0275d8;
 }
 
-.edit-button:hover {
+.board_overlay .edit-button:hover {
     background-color: #025aa5;
 }
 
-/* 게시글 작성 폼 */
-.createNlist {
+.board_overlay .createNlist {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,7 +103,7 @@ textarea, input {
     padding-right: 3vw;
 }
 
-#createpost-btn {
+.board_overlay #createpost-btn {
     background-color: white;
     color: black;
     padding: 15px;
@@ -124,16 +114,16 @@ textarea, input {
     text-align: left;
 }
 
-#createpost-btn:hover {
+.board_overlay #createpost-btn:hover {
     text-decoration: underline;
     text-decoration-color: gray;
 }
 
-#alignBar {
+.board_overlay #alignBar {
     margin-left: auto;
 }
 
-#formContainer, #formContainer div, #editFormContainer, #editFormContainer div {
+.board_overlay #formContainer,.board_overlay #formContainer div,.board_overlay #editFormContainer,.board_overlay #editFormContainer div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,48 +131,43 @@ textarea, input {
     margin-right: 20px;
 }
 
-#formContainer button, #editFormContainer button {
+.board_overlay #formContainer button,.board_overlay #editFormContainer button {
     margin-top: 30vw;
 }
 
-#formContainer input, #editFormContainer input {
+.board_overlay #formContainer input,.board_overlay #editFormContainer input {
     border: none;
     outline: none;
 }
 
-#formContainer textarea, #editFormContainer textarea {
+.board_overlay #formContainer textarea,.board_overlay #editFormContainer textarea {
     height: 90vw;
 }
 
-#countHeart {
+.board_overlay #countHeart {
     padding-left: 10px;
     text-align: right;
     display: block;
 }
-#mainContainer2 {
-    position: fixed;      /* 요소를 고정 위치로 설정 */
-    top: 50px;               /* 화면의 최상단에 위치 */
-    left: 0;
+.board_overlay #mainBD_Container2 {
     width: 100%;
-    z-index: 1;
     box-sizing: border-box;
     padding: 20px;
     background-color: white; /* 배경색을 설정하여 다른 요소와 겹쳐도 보이도록 */
 }
 
-/* Search and Post List Styles */
-.searchContainer {
+.board_overlay .searchBD_Container {
     display: flex;
     background-color: #F6F6F6;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius:10px;       
+    padding: 15px;
     height: 20px;
     overflow: hidden;
 }
 
-#search {
+.board_overlay #search {
     background-color: #F6F6F6;
     border-color: #F6F6F6;
     font-size: 18px;
@@ -195,7 +180,7 @@ textarea, input {
     height: 25px;
 }
 
-#search-btn {
+.board_overlay #search-btn {
     border: none;
     cursor: pointer;
     width: 20px;
@@ -206,13 +191,13 @@ textarea, input {
     background-size: contain;
 }
 
-#search:focus {
+.board_overlay #search:focus {
     border: none;
     outline: none;
 }
 
 /* Post List */
-#postListContainer {
+.board_overlay #postLisBD_tContainer {
     display: flex;
     margin-left: 20px;
     margin-right: 20px;
@@ -221,17 +206,17 @@ textarea, input {
 }
 
 
-#postList {
+.board_overlay #postList {
     list-style: none;
     padding: 0;
 }
 
-#postList li {
+.board_overlay #postList li {
     padding: 15px;
     margin-bottom: 10px;
 }
 
-#postList li span {
+.board_overlay #postList li span {
     display: block;
     margin-top: 5px;
 }

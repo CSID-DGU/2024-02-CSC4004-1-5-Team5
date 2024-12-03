@@ -3,7 +3,7 @@ import "../style.css";
 
 function BoardMenu({ onClose, deletePost, editPost }) {
     return (
-        <div className="menu-overlay">
+        <div className="board_overlay">
             <div className="menu-container">
                 <header className="menu-header">
                     <img src="/png/logo.png" alt="logo" className="logo" />

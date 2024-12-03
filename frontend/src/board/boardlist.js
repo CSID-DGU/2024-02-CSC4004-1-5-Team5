@@ -92,8 +92,8 @@ function BoardList() {
     };
 
     return (
-        <div>
-            <header>
+        <div className="board_overlay">
+            <header id="titleContainer">
                 <img src="/png/back.png" alt="back" className="back" onClick={() => navigate('/board')} />
                 <h1>{boardName} 게시판</h1>
                 <img
@@ -104,21 +104,21 @@ function BoardList() {
                 />
             </header>
 
-            <div id="mainBD_container2">
-                <div id="postListBD_container">
-                    <div className="searchBD_container">
+            <div id="mainBD_Container2">
+                <div id="postListBD_Container">
+                    <div className="searchBD_Container">
                         <textarea
                             id="search"
                             placeholder="키워드를 입력하세요."
-                            value={searchTerm} // 입력된 검색어 상태를 textarea에 바인딩
-                            onChange={handleSearchChange} // 검색어 변경 시 상태 업데이트
-                            onKeyDown={handleKeyDown} // 엔터 키 감지
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                            onKeyDown={handleKeyDown}
                         />
                         <img
                             id="search-btn"
                             src="/png/Search.png"
                             alt="search"
-                            onClick={handleSearchClick} // 검색 버튼 클릭 시 필터링
+                            onClick={handleSearchClick}
                         />
                     </div>
                     <div className="createNlist">

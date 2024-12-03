@@ -49,7 +49,6 @@ function PostDetail() {
             });
     };
 
-    // 게시글 삭제
     const deletePost = () => {
         fetch(`/posts/${postId}`, { method: 'DELETE' })
             .then(() => {
@@ -60,17 +59,14 @@ function PostDetail() {
             });
     };
 
-    // 게시글 수정
     const editPost = () => {
         navigate(`/edit-post/${postId}`);  // 게시글 수정 페이지로 이동
     };
 
-    // 메뉴 열기
     const openMenu = () => {
         setShowMenu(true);
     };
 
-    // 메뉴 닫기
     const closeMenu = () => {
         setShowMenu(false);
     };
@@ -80,8 +76,8 @@ function PostDetail() {
     }
 
     return (
-        <div>
-            <header>
+        <div className="board_overlay">
+            <header id="titleContainer">
                 <img src="/png/back.png" alt="back" className="back" onClick={() => window.history.back()} />
                 <h1>게시글</h1>
                 <img

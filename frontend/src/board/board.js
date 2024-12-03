@@ -22,8 +22,8 @@ function Board() {
     
     
     return (
-        <div>
-            <header>
+        <div className="board_overlay">
+            <header id="titleContainer">
                 <img src="png/back.png" alt="back" className="back" />
                 <h1>게시판</h1>
                 <img

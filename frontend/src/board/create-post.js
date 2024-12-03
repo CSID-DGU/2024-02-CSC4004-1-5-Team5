@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Cookies from "js-cookie";
 import axios from "axios";
+import './board.css';
 
 function PostCreate() {
     const { boardName } = useParams();  // URL에서 boardName을 가져옴
@@ -68,7 +69,7 @@ function PostCreate() {
 
     // 게시글 작성 폼
     return (
-        <div>
+        <div className="board_overlay">
             <header class="post-header">
                 <img 
                     src="/png/back.png" 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './board.css';
 
 function EditPost() {
     const { boardName, postId } = useParams();  // URL에서 boardName과 postId를 가져옴
@@ -7,23 +8,6 @@ function EditPost() {
     const [content, setContent] = useState('');  // 본문 상태
     const navigate = useNavigate();
 
-    // 쿠키에서 memberId 가져오기
-    /*
-    const getCookie = (name) => {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
-    };
-    // 쿠키에서 memberId 가져오기
-    const memberId = getCookie('memberId');
-    if (!memberId) {
-        alert('로그인이 필요합니다.');
-        return;
-    }
-    
-    // 수정된 게시글 데이터 생성
-    */
    const updatedPostData = {
        title: title.trim(),
        content: content.trim(),
@@ -67,7 +51,7 @@ function EditPost() {
                 if (response.ok) {
                     response.json().then((data) => {
                         alert('게시글이 수정되었습니다.');
-                        navigate(`/board/${boardName}`);  // 게시판으로 리다이렉트
+                        navigate(`/board`);
                     });
                 } else {
                     alert('게시글 수정에 실패했습니다.');
@@ -80,8 +64,8 @@ function EditPost() {
     };
 
     return (
-        <div>
-            <header>
+        <div className="board_overlay">
+            <header id="titleContainer">
                 <img
                     src="/png/back.png"
                     alt="back"

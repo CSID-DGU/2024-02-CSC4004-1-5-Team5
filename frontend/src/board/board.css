@@ -1,16 +1,10 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 
-/* 기본 스타일 */
-body {
-    font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    color: #333;
-}
 
-#titleContainer {
+
+
+.board_overlay #titleContainer {
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -19,19 +13,19 @@ body {
     padding: 20px;
 }
 
-#title {
+.board_overlay #title {
     flex: 1;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
 }
 
-#titleContainer img {
+.board_overlay #titleContainer img {
     transform: scale(1.2);
     transform-origin: center;
 }
 
-.container {
+.board_overlay .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
@@ -40,7 +34,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-button {
+.board_overlay button {
     padding: 10px 20px;
     background-color: #0A62D0;
     border-radius: 10px;
@@ -50,38 +44,37 @@ button {
     font-size: 16px;
 }
 
-#postDetailContainer{
+.board_overlay #postDetailContainer{
     box-sizing: border-box;
     padding-left: 30px;
     padding-right: 30px;
 }
 
 
-ul {
+.board_overlay ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
+.board_overlay li {
     padding: 15px;
     margin-bottom: 10px;
     
 }
 
-h2 {
+.board_overlay h2 {
     margin-bottom: 20px;
 }
 
-hr {
-    border: 0;                /* 기본 border 제거 */
-    height: 1px;              /* 구분선의 두께 설정 */
-    background-color: #DCDCDC; /* 구분선의 색상 설정 */
+.board_overlay hr {
+    border: 0;
+    height: 1px;
+    background-color: #DCDCDC;
     width:80vw;
     margin: 10px auto;
 }
 
-/* 댓글 */
-textarea, input {
+.board_overlay textarea, input {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -91,32 +84,31 @@ textarea, input {
     font-size: 16px;
 }
 
-/* 게시글 작성 폼 */
-.form-container {
+.board_overlay .form-container {
     margin-top: 20px;
 }
 
-.delete-button {
+.board_overlay .delete-button {
     background-color: #d9534f;
 }
 
-.delete-button:hover {
+.board_overlay .delete-button:hover {
     background-color: #c9302c;
 }
 
-/* 수정 버튼 */
-.edit-button {
+.board_overlay .edit-button {
     background-color: #0275d8;
 }
 
-.edit-button:hover {
+.board_overlay .edit-button:hover {
     background-color: #025aa5;
 }
 
-.postsList button{
+.board_overlay .postsList button{
     padding-left:5px;
 }
-#boardSelection button,#boardSelection span button {
+
+.board_overlay #boardSelection button,.board_overlay #boardSelection span button {
     width: 100%;              /* 버튼의 너비를 100%로 설정하여 부모 컨테이너에 맞게 확장 */
     padding: 15px;            /* 버튼의 내부 여백 */
     padding-left: 25px;            /* 버튼의 내부 여백 */
@@ -137,7 +129,6 @@ textarea, input {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 60px;
 }
 
 #boardSelection span {
@@ -157,7 +148,7 @@ textarea, input {
     justify-content: center;
 }
 
-.searchContainer{
+.board_overlay .searchContainer{
     display: flex;
     background-color: #F6F6F6;
     align-items: center;
@@ -167,7 +158,7 @@ textarea, input {
     height: 20px;
     overflow: hidden;
 }
-#search, #commentInput{
+.board_overlay #search, .board_overlay #commentInput{
     box-sizing: border-box;
     background-color: #F6F6F6;
     border-color: #F6F6F6;
@@ -180,7 +171,8 @@ textarea, input {
     width: 80%;
     height: 25px;
 }
-#search-btn, #comment-btn{
+
+.board_overlay #search-btn,.board_overlay  #comment-btn{
     border: none;
     cursor: pointer;
     width: 10px;
@@ -190,11 +182,13 @@ textarea, input {
     background-repeat: no-repeat;
     background-size: contain;
 }
-#search:focus{
+
+.board_overlay #search:focus{
     border: none;
     outline: none;
 }
-.createNlist{
+
+.board_overlay .createNlist{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,7 +196,7 @@ textarea, input {
     padding-right: 3vw;
 }
 
-#createpost-btn{
+.board_overlay #createpost-btn{
     background-color: white;
     color: black;
     padding: 15px;
@@ -213,16 +207,16 @@ textarea, input {
     text-align: left;
 }
 
-#createpost-btn:hover{
+.board_overlay #createpost-btn:hover{
     text-decoration: underline;
     text-decoration-color: gray;
 }
 
-#alignBar{
+.board_overlay #alignBar{
     margin-left: auto;
 }
 
-#formContainer, #formContainer div, #editFormContainer, #editFormContainer div{
+.board_overlay #formContainer,.board_overlay  #formContainer div,.board_overlay #editFormContainer,.board_overlay #editFormContainer div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -230,20 +224,21 @@ textarea, input {
     margin-left: 20px;
     margin-right: 20px;
 }
-#formContainer button, #editFormContainer button{
+
+.board_overlay #formContainer button,.board_overlay #editFormContainer button{
     margin-top:30vw;
 }
 
-#formContainer input, #editFormContainer input{
+.board_overlay #formContainer input,.board_overlay #editFormContainer input{
     border:none;
     outline: none;
 }
 
-#formContainer textarea, #editFormContainer textarea{
+.board_overlay #formContainer textarea,.board_overlay  #editFormContainer textarea{
     height: 90vw;
 }
 
-#countHeart{
+.board_overlay #countHeart{
     padding-left: 10px;
     text-align: right;
     display: block;

@@ -12,3 +12,18 @@
 .board_overlay #postContentDetail{
     margin-bottom: 40px;
 }
+
+.board_overlay .menu-header{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;    
+    padding: 20px;
+}
+
+.board_overlay h3{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}

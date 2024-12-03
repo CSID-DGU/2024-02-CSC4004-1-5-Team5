@@ -70,7 +70,7 @@ function PostCreate() {
     // 게시글 작성 폼
     return (
         <div className="board_overlay">
-            <header class="post-header">
+            <header id="titleContainer" class="createEdit">
                 <img 
                     src="/png/back.png" 
                     alt="back" 

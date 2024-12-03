@@ -65,12 +65,12 @@ function EditPost() {
 
     return (
         <div className="board_overlay">
-            <header id="titleContainer">
+            <header id="titleContainer"  class="createEdit">
                 <img
                     src="/png/back.png"
                     alt="back"
                     className="back"
-                    onClick={() => navigate(`/board/${boardName}`)}
+                    onClick={() => navigate(`/board`)}
                 />
                 <h1>게시글 수정</h1>
             </header>

@@ -25,6 +25,10 @@
     transform-origin: center;
 }
 
+.createEdit h1{
+    margin-right: 25vw;
+}
+
 .board_overlay .container {
     width: 80%;
     margin: 0 auto;
@@ -142,7 +146,6 @@
 
 #postListContainer{
     box-sizing: border-box;
-    display: flex;
     margin-left: 20px;
     margin-right: 20px;
     justify-content: center;

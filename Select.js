@@ -114,22 +114,16 @@ const DestinationSelect = () => {
     setSelected(suggestion.display);
     setSuggestions([]);
     console.log(`선택된 여행지: { country: '${suggestion.country}', city: '${suggestion.city}' }`);
-  };
+  }
 
-
-  // Handle the back button click
   const handleBackClick = () => {
-  //navigate("/previous-page"); // Replace '/previous-page' with the actual path you want
+    window.location.href = "/previous-page"; // 실제 경로로 변경
   };
 
-  // Handle the delete button click
   const handleDeleteClick = () => {
-  //navigate("/delete-page"); // Replace '/delete-page' with the actual path you want
+    window.location.href = "/delete-page"; // 실제 경로로 변경
   };
-
-
-
-
+  
   return (
     <div className="select-container">
       <header className="select-header">
@@ -137,14 +131,14 @@ const DestinationSelect = () => {
           src="back.png"
           alt="Back"
           className="select-back-icon"
-          onClick={() => window.location.href = '/back'}
+          onClick={handleBackClick}
         />
         <h1 className="select-title">새로운 체크리스트</h1>
         <img
           src="delete.png"
           alt="Delete"
           className="select-delete-icon"
-          onClick={() => window.location.href = '/delete'}
+          onClick={handleDeleteClick}
         />
       </header>
 

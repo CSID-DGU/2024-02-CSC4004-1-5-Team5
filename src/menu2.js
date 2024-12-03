@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.css";
+import "./menu.css";
 import { useNavigate } from "react-router-dom";
 
 function Menu2({ onClose }) {

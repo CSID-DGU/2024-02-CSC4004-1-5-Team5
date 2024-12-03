@@ -8,7 +8,7 @@
 
 
 
-header {
+.signupheader header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -19,20 +19,20 @@ header {
   justify-content: center;
 }
 
-header .logo {
+.signupheader header .logo {
   width: 40px; /* 로고의 크기를 적절히 조정 */
   height: auto;
   margin-right: -15px; /* 텍스트와 로고 사이 간격 */
 }
 
-header h1 {
+.signupheader header h1 {
   font-size: 28px;
   color: #414141;
   font-weight: 800;
 }
 
 
-form {
+.signupform form {
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
@@ -41,13 +41,13 @@ form {
   margin-top: 100px;
 }
 
-form h2 {
+.signupform form h2 {
   font-size: 28px;
   color: #414141;
   margin-bottom: 40px;
 }
 
-form input[type="text"],
+.signupform form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
   border: solid 1px #414141;
@@ -57,7 +57,7 @@ form input[type="email"] {
   border-radius: 10px;
 }
 
-form input[type="submit"] {
+.signupform form input[type="submit"] {
   background-color: #0A62D0;
   color: #FFFFFF;
   height: 43px;
@@ -73,16 +73,16 @@ form input[type="submit"] {
 }
 
 /* 회원가입 링크 스타일 */
-form p {
+.signupform form p {
   margin-top: 30px; /* 로그인 버튼과의 간격을 조정 */
 }
 
-form p a {
+.signupform form p a {
   color: #414141; /* 원하는 색상으로 변경 (예: 파란색) */
   text-decoration: none; /* 밑줄 제거 */
   font-size: 13px; /* 텍스트 크기 조정 */
 }
 
-form p a:hover {
+.signupform form p a:hover {
   color: #0056b3; /* 마우스 오버 시 색상 변경 (선택사항) */
 }

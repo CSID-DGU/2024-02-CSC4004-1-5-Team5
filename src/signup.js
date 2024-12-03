@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import '../login/login.css';
+import './signup.css';
 import {useNavigate} from 'react-router-dom';
 
 function Signup() {
@@ -56,7 +56,7 @@ function Signup() {
 
   return (
       <div>
-        <header>
+        <header classname="signupheader">
           <img src="/png/logo.png" alt="logo" className="logo" />
           <h1>TRAVEL KIT</h1>
           <img
@@ -67,7 +67,7 @@ function Signup() {
             />
         </header>
 
-        <form name="signupForm" method="post" onSubmit={handleSignup}>
+        <form name="signupForm" class="signupform" method="post" onSubmit={handleSignup}>
           <h2>회원가입</h2>
           <input
               type="text"

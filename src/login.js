@@ -38,7 +38,7 @@ function Login() {
   };
   return (
       <div>
-        <header>
+        <header classname="loginheader">
           <img src="/png/logo.png" alt="logo" className="logo" />
           <h1>TRAVEL KIT</h1>
           <img
@@ -49,7 +49,7 @@ function Login() {
             />
         </header>
 
-        <form name="fo" method="get" onSubmit={handleLogin}>
+        <form name="fo" class="loginform" method="get" onSubmit={handleLogin}>
           <h2>로그인</h2>
           <input
               type="text"

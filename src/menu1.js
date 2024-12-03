@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
-import "../style.css";
+import "./menu.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +31,7 @@ function Menu1({ onClose }) {
     return (
         <div>
             <div>
-                <header>
+                <header classname="menuheader">
                     <img src="/png/logo.png" alt="logo" className = "logo"/>
                     <h1>TRAVEL KIT</h1>
                     <img

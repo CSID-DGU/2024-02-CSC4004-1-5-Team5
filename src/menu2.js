@@ -8,7 +8,7 @@ function Menu2({ onClose }) {
         navigate(-1);  // -1은 이전 페이지를 의미
     };
     return (
-        <div>
+        <div class="menubody">
             <div>
                 <header>
                     <img src="/png/logo.png" alt="logo" className = "logo"/>

@@ -29,7 +29,7 @@ function Menu1({ onClose }) {
         }
     };
     return (
-        <div>
+        <div classname="menubody">
             <div>
                 <header classname="menuheader">
                     <img src="/png/logo.png" alt="logo" className = "logo"/>

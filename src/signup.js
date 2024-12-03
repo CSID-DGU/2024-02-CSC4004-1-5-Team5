@@ -13,6 +13,10 @@ function Signup() {
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
+  const goBack = () => {
+    navigate(-1); // 이전 페이지로 이동
+  };
+
   const handleSignup = async (e) => {
     e.preventDefault();
     setErrorMessage('');

@@ -8,7 +8,7 @@
   font-family: 'Pretendard', sans-serif; /* Pretendard 폰트 적용 */
 }
 
-body {
+.menubody {
   background-color: #ffffff; /* 배경 흰색 */
   color: #414141;
    display: flex;
@@ -17,13 +17,13 @@ body {
    justify-content: center;
 }
 
-.menuh3 h3 a {
+.menubody h3 a {
   text-decoration: none;
   color: inherit;
 }
 
 /* 헤더 섹션 */
-.menuheader header {
+.menubody header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -36,7 +36,7 @@ body {
   z-index: 1000; /* 다른 요소 위에 표시 */
 }
 
-.menuheader .header-content {
+.menubody .header-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,19 +44,19 @@ body {
   max-width: 1200px;
 }
 
-.menuheader header .logo {
+.menubody header .logo {
   width: 40px; /* 로고 크기 */
   height: auto;
   margin-right: -15px; /* 텍스트와 로고 사이 간격 */
 }
 
-.menuheader header h1 {
+.menubody header h1 {
   font-size: 28px;
   font-weight: 800;
   color: #414141;
 }
 
-.menuheader header .delete {
+.menubody header .delete {
     color: #0A62D0;
     position: absolute; /* 절대 위치 지정 */
     right: 25px; /* 오른쪽에서 25px 떨어진 위치 */
@@ -65,7 +65,7 @@ body {
     cursor: pointer; /* 마우스 커서 변경 */
   }
   
-.menuheader header .back {
+.menubody header .back {
       color: #0A62D0;
       position: absolute; /* 절대 위치 지정 */
       left: 25px; /* 오른쪽에서 25px 떨어진 위치 */
@@ -74,7 +74,7 @@ body {
       cursor: pointer; /* 마우스 커서 변경 */
     }
 
-.menuheader header .menu {
+.menubody header .menu {
   width: 30px; /* 메뉴 아이콘 크기 */
   color: #0A62D0;
   position: absolute; /* 절대 위치 지정 */

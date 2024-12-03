@@ -49,7 +49,7 @@ function MainPage() {
         }, []);
 
     return (
-         <div>
+         <div className="mainbody">
               {/* 헤더 섹션 */}
               <header class="mainheader">
                 <div className="header-content">

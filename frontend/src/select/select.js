@@ -94,6 +94,7 @@ const SelectPage = () => {
     const [suggestions, setSuggestions] = useState([]); // 자동완성 추천 항목
     const [selectCountry, setSelectCountry] = useState(""); // 최종 선택된 나라
     const [selectCity, setSelectCity] = useState(""); // 최종 선택된 도시
+    const [selected, setSelected] = useState(""); // 최종 선택
     const navigate = useNavigate();
 
     // 입력 변경 시 추천 항목 업데이트
@@ -116,6 +117,7 @@ const SelectPage = () => {
         setQuery("");
         setSelectCountry(suggestion.country);
         setSelectCity(suggestion.city);
+        setSelected(suggestion.display)
         console.log(`선택된 여행지: { country: '${suggestion.country}', city: '${suggestion.city}' }`);
     };
 
@@ -141,45 +143,60 @@ const SelectPage = () => {
 
 
     return (
-        <div className="container">
-            {
-                <header className= "select-header">
-                    <   img src="/png/back.png" alt="Back" onClick={() => window.location.href = '/back'} />
-                    <h1>새로운 체크리스트</h1>
-                    <img src="/png/delete.png" alt="Delete" onClick={() => window.location.href = '/delete'} />
-                </header>
-            }
+        <div className="select-container">
+              <header className="select-header">
+                <img
+                  src="back.png"
+                  alt="Back"
+                  className="select-back-icon"
+                  onClick={() => window.location.href = '/back'}
+                />
+                <h1 className="select-title">새로운 체크리스트</h1>
+                <img
+                  src="delete.png"
+                  alt="Delete"
+                  className="select-delete-icon"
+                  onClick={() => window.location.href = '/delete'}
+                />
+              </header>
 
-            <form>
-                <h2>여행지를 선택해 주세요</h2>
-                <h3>여행 목적지(도시 이름)를 검색 목록에서 선택해 주세요.</h3>
-            </form>
-            <section className="content">
-                {selectCountry && <p className="selected-destination">선택된 여행지: {selectCity} {selectCountry}</p>}
-                <div className="search-box">
-                    <input
-                        type="text"
-                        className="search-input"
-                        placeholder="여행 도시를 입력하세요."
-                        value={query}
-                        onChange={handleInputChange}
-                    />
-                    <button type="button" className="search-button">
-                        🔍
-                    </button>
+              <form className="select-form">
+                <h2 className="select-subtitle">여행지를 선택해 주세요</h2>
+                <h3 className="select-instruction">
+                  여행 목적지(도시 이름)를 검색 목록에서 선택해 주세요.
+                </h3>
+              </form>
+
+              <section className="select-content">
+                {selected && (
+                  <p className="select-selected-destination">
+                    선택된 여행지: {selected}
+                  </p>
+                )}
+                <div className="select-search-box">
+                  <input
+                    type="text"
+                    className="select-search-input"
+                    placeholder="여행 도시를 입력하세요."
+                    value={query}
+                    onChange={handleInputChange}
+                  />
+                  <button type="button" className="select-search-button">
+                    🔍
+                  </button>
                 </div>
                 {suggestions.length > 0 && (
-                    <ul className="suggestions-list">
-                        {suggestions.map((suggestion, index) => (
-                            <li
-                                key={index}
-                                className="suggestion-item"
-                                onClick={() => handleSuggestionClick(suggestion)}
-                            >
-                                {suggestion.display}
-                            </li>
-                        ))}
-                    </ul>
+                  <ul className="select-suggestions-list">
+                    {suggestions.map((suggestion, index) => (
+                      <li
+                        key={index}
+                        className="select-suggestion-item"
+                        onClick={() => handleSuggestionClick(suggestion)}
+                      >
+                        {suggestion.display}
+                      </li>
+                    ))}
+                  </ul>
                 )}
                 <div className="button-container">
                     <button

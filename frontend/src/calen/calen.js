@@ -18,8 +18,8 @@ const CalenPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const userIdFromCookie = Cookies.get("userId");
-        setMemberId(userIdFromCookie);
+        const userId = localStorage.getItem("userId");
+        setMemberId(userId);
     }, []);
 
     const handleDateChange = (dates) => {
@@ -54,7 +54,7 @@ const CalenPage = () => {
             };
 
             try {
-                const response = await axios.post('/checklists/create', requestData);
+                const response = await axios.post('http://13.124.145.176:8080/checklists/create', requestData);
                 alert(`체크리스트가 성공적으로 생성되었습니다.`);
                 navigate('/mychecklist')
             } catch (error) {
@@ -76,19 +76,19 @@ const CalenPage = () => {
       </header> */}
 
             <header className = "calen-header" style={{ display: "table", width: "100%" }}>
-  <span style={{ display: "table-cell", textAlign: "left", width: "10%" }}>
-    <img
-        src="/png/back.png"
-        alt="Back"
-        onClick={() => (window.location.href = "/back")}
-        style={{ width: "19.17px", height: "20px", cursor: "pointer" }}
-    />
-  </span>
-                <h1 style={{ display: "table-cell", textAlign: "center", fontSize: "21px", fontWeight: "800", color: "#414141" }}>
-                    새로운 체크리스트
-                </h1>
-                <span style={{ display: "table-cell", textAlign: "right", width: "10%" }}>
-    <img
+              <span style={{ display: "table-cell", textAlign: "left", width: "10%" }}>
+                <img
+                    src="/png/back.png"
+                    alt="Back"
+                    onClick={() => (window.location.href = "/back")}
+                    style={{ width: "19.17px", height: "20px", cursor: "pointer" }}
+                />
+              </span>
+                    <h1 style={{ display: "table-cell", textAlign: "center", fontSize: "21px", fontWeight: "800", color: "#414141" }}>
+                        새로운 체크리스트
+                    </h1>
+                    <span style={{ display: "table-cell", textAlign: "right", width: "10%" }}>
+                <img
         src="/png/delete.png"
         alt="Delete"
         onClick={() => (window.location.href = "/delete")}
@@ -96,8 +96,6 @@ const CalenPage = () => {
     />
   </span>
             </header>
-
-
             <div className="calen-container">
                 <form>
                     <h2>출발날짜와 도착날짜를 선택하세요.</h2>

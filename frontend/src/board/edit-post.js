@@ -50,8 +50,8 @@ function EditPost() {
             .then((response) => {
                 if (response.ok) {
                     response.json().then((data) => {
+                        navigate(`/posts/${postId}`);
                         alert('게시글이 수정되었습니다.');
-                        navigate(`/board`);
                     });
                 } else {
                     alert('게시글 수정에 실패했습니다.');
@@ -65,7 +65,7 @@ function EditPost() {
 
     return (
         <div className="board_overlay">
-            <header id="titleContainer"  class="createEdit">
+            <header id="titleContainer"  className="createEdit">
                 <img
                     src="/png/back.png"
                     alt="back"

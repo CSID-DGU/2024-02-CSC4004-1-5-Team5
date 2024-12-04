@@ -5,12 +5,16 @@
 
 
 .board_overlay #titleContainer {
-    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;    
-    padding: 20px;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 헤더 하단 그림자 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
 }
 
 .board_overlay #title {
@@ -78,7 +82,7 @@
     margin: 10px auto;
 }
 
-.board_overlay textarea, input {
+.board_overlay textarea,.board_overlay input {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -133,6 +137,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 90px;
 }
 
 #boardSelection span {
@@ -226,6 +233,10 @@
     box-sizing: border-box;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.board_overlay #formContainer{
+    margin-top: 90px;
 }
 
 .board_overlay #formContainer button,.board_overlay #editFormContainer button{

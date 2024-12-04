@@ -17,6 +17,7 @@ import BoardList from "./board/boardlist";
 import CreatePost from "./board/create-post";
 import EditPost from "./board/edit-post";
 import HotPosts from "./board/hotpostlist";
+import AllBoard from "./board/allboard"
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/posts/:postId" element={<Post />} />
                     <Route path="/board" element={<Board />} />
                     <Route path="/boardMenu" element={<BoardMenu />} />
+                    <Route path="/allboard" element={<AllBoard />} />
                     <Route path="/boardlist/:boardName" element={<BoardList />} />
                     <Route path="/create-post" element={<CreatePost />} />
                     <Route path="/hotposts" element={<HotPosts />} />

@@ -28,7 +28,7 @@ function Signup() {
     }
 
     try {
-      const response = await fetch(`/members/new`, {
+      const response = await fetch(`http://13.124.145.176:8080/members/new`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

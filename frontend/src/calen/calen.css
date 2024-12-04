@@ -8,7 +8,7 @@
 }
 
 
-body {
+.calen-header .calen-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,48 +18,52 @@ body {
     margin: 0;
 }
 
-.calen-header{
-    display: table;
-    width: 100%;
-    margin-top: 20px; /* 상단 여백 추가 */
-
+/* Header 스타일 */
+.calen-header {
+  display: table;
+  width: 100%;
+  margin-top: 20px; /* 상단 여백 추가 */
 }
 
+.calen-header h1 {
+  font-size: 21px;
+  color: #414141;
+  font-weight: 800;
+  text-align: center;
+  flex-grow: 1; /* 텍스트가 가운데에 오도록 설정 */
+  margin: 0; /* 기본 여백 제거 */
+}
 
-
+/* Container 스타일 */
 .calen-container {
-    /* font-family: Arial, sans-serif; */
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
-
-
-
-form h2 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.calen-container form h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
-.calendar {
-    display: inline-block;
-    margin-bottom: 20px;
+.calen-container .calendar {
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-.button-container {
-    margin-top: 20px;
+.calen-container .button-container {
+  margin-top: 20px;
 }
 
-.create-checklist-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
+.calen-container .create-checklist-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
 }
 
-.create-checklist-button:hover {
-    background-color: #0056b3;
+.calen-container .create-checklist-button:hover {
+  background-color: #0056b3;
 }

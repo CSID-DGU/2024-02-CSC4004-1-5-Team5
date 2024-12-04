@@ -6,14 +6,14 @@
   font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
 }
 
-body {
+.select-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-header {
+.select-container header {
     position: fixed;
     top: 0;
     left: 0; /* 화면의 왼쪽 경계에서 시작 */
@@ -28,14 +28,14 @@ header {
     text-align: center; /* 텍스트를 중앙에 배치 */
 }
 
-header h1 {
+.select-container header h1 {
   font-size: 28px;
   color: #414141;
   font-weight: 800;
 }
 
 
-form {
+.select-container form {
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
@@ -44,21 +44,21 @@ form {
   margin-top: 20px;
 }
 
-form h2 {
+.select-container form h2 {
   font-size: 20px;
   color: #414141;
   margin-bottom: 10px;
 }
 
-form h3 {
+.select-container form h3 {
   font-size: 15px;
   color: #414141;
   margin-bottom: 10px;
 }
 
-form input[type="text"],
-form input[type="password"],
-form input[type="email"] {
+.select-container form input[type="text"],
+.select-container form input[type="password"],
+.select-container form input[type="email"] {
   border: solid 1px #414141;
   padding: 10px;
   margin: 10px 0;
@@ -66,7 +66,7 @@ form input[type="email"] {
   border-radius: 10px;
 }
 
-form input[type="submit"] {
+.select-container form input[type="submit"] {
   background-color: #0A62D0;
   color: #FFFFFF;
   height: 43px;
@@ -75,24 +75,24 @@ form input[type="submit"] {
   cursor: pointer;
   margin-top: 20px;
 }
-.left-align {
+.select-container .left-align {
   width: 100%;
   text-align: left; /* 왼쪽 정렬 */
   margin-left: 25%; /* 필요한 경우 왼쪽 여백 추가 */
 }
 
 /* 회원가입 링크 스타일 */
-form p {
+.select-container form p {
   margin-top: 30px; /* 로그인 버튼과의 간격을 조정 */
 }
 
-form p a {
+.select-container form p a {
   color: #414141; /* 원하는 색상으로 변경 (예: 파란색) */
   text-decoration: none; /* 밑줄 제거 */
   font-size: 13px; /* 텍스트 크기 조정 */
 }
 
-form p a:hover {
+.select-container form p a:hover {
   color: #0056b3; /* 마우스 오버 시 색상 변경 (선택사항) */
 }
 
@@ -102,7 +102,7 @@ form p a:hover {
     box-sizing: border-box;
 }
 
-body {
+.select-container {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -112,7 +112,7 @@ body {
     margin: 0; /* 추가적인 여백 제거 */
 }
 
-.container {
+.select-container .container {
     width: 100%;
     max-width: 375px;
     background-color: #ffffff;
@@ -120,7 +120,7 @@ body {
     border-radius: 10px;
 }
 
-.header {
+.select-container .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -129,7 +129,7 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.back-button, .close-button {
+.select-container .back-button,.select-container  .close-button {
     font-size: 18px;
     color: #007AFF;
     background: none;
@@ -137,18 +137,18 @@ body {
     cursor: pointer;
 }
 
-.title {
+.select-container .title {
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     flex-grow: 1;
 }
 
-.content {
+.select-container .content {
     padding: 20px;
 }
 
-.instruction {
+.select-container .instruction {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -160,7 +160,7 @@ body {
     margin-bottom: 20px;
 }
 
-.search-box {
+.select-container .search-box {
     display: flex;
     align-items: center;
     border: 1px solid #cccccc;
@@ -169,7 +169,7 @@ body {
     background-color: #f0f0f0;
 }
 
-.search-input {
+.select-container .search-input {
     width: 100%;
     border: none;
     outline: none;
@@ -178,10 +178,145 @@ body {
     background-color: transparent;
 }
 
-.search-button {
+.select-container .search-button {
     font-size: 18px;
     color: #888888;
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.select-container .select-container {
+  width: 100%;
+  max-width: 375px;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-header {
+  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.select-back-icon,
+.select-delete-icon {
+  width: 19.17px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.select-title {
+  font-size: 21px;
+  color: #414141;
+  font-weight: 800;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.select-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 314px;
+  margin-top: 20px;
+}
+
+.select-subtitle {
+  font-size: 20px;
+  color: #414141;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.select-instruction {
+  font-size: 12px;
+  color: #414141;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.select-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.select-search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #969292;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #ffffff;
+  width: calc(100% - 50px);
+  max-width: 314px;
+  position: relative;
+  z-index: 1;
+}
+
+.select-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+.select-search-button {
+  font-size: 18px;
+  color: #888888;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.select-suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  width: 100%;
+  max-width: 314px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.select-suggestion-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.select-suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.select-selected-destination {
+  font-size: 16px;
+  color: #414141;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
 }

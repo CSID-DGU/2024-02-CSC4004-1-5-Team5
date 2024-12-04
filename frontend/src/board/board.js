@@ -6,14 +6,6 @@ import { useNavigate } from 'react-router-dom';
 function Board() {
     const [selectedBoard, setSelectedBoard] = useState(null);
     const navigate = useNavigate();
-
-    /* // 나라별 분류 추가
-    const selectBoard = (boardName) => {
-        setSelectedBoard(boardName);
-        // 게시판 선택 후 해당 게시판 페이지로 이동
-        navigate(`/boardlist/${boardName}`);  // 나라명을 포함한 경로로 이동
-    };
-    */
     const selectBoard = (boardName) => {
         setSelectedBoard(boardName);
         // 게시판 선택 후 해당 게시판 페이지로 이동
@@ -24,7 +16,7 @@ function Board() {
     return (
         <div className="board_overlay">
             <header id="titleContainer">
-                <img src="png/back.png" alt="back" className="back" />
+                <img src="png/back.png" alt="back" className="back" onClick={() => navigate('/')} />
                 <h1>게시판</h1>
                 <img
                     src="png/menu.png"
@@ -35,13 +27,13 @@ function Board() {
             </header>
             <div id="mainContainer">
                 <div id="boardSelection">
-                    <span className="postsList" onClick={() => alert('내가 쓴 글')}>
-                        <img src="png/post.png" alt="post" />
+                    <span className="postsList" onClick={() => alert('추후 지원 예정입니다.')}>
+                        <img src="png/post.png" alt="chats" />
                         <button>내가 쓴 글</button>
                     </span>
-                    <span className="postsList" onClick={() => alert('댓글 단 글')}>
-                        <img src="png/chats.png" alt="chats" />
-                        <button>댓글 단 글</button>
+                    <span className="postsList" onClick={() => navigate('/allboard')}>
+                        <img src="png/chats.png" alt="post" />
+                        <button>전체 게시글</button>
                     </span>
                     <span className="postsList" onClick={() => navigate('/hotposts')}>
                         <img src="png/bestpost.png" alt="bestpost" />

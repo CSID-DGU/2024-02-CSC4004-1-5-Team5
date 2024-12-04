@@ -154,6 +154,7 @@
     box-sizing: border-box;
     padding: 20px;
     background-color: white; /* 배경색을 설정하여 다른 요소와 겹쳐도 보이도록 */
+    margin-top: 90px;
 }
 
 .board_overlay .searchBD_Container {

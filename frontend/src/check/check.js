@@ -124,7 +124,7 @@ const CheckList = ({ checklistId }) => {
     };
 
     return (
-        <div className="container">
+        <div className="Check_container">
             <header className = "check-header">
                 <h1>{checklistInfo.city}</h1>
                 <p>{checklistInfo.departureDate} - {checklistInfo.arrivalDate}</p>

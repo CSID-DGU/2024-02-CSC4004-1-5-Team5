@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
 import "./list.css";
+import { useNavigate } from "react-router-dom";
 
 const CheckList = () => {
     const [checklists, setChecklists] = useState([]);
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchChecklists = async () => {
-            const userId = Cookies.get("userId");
+            const userId = localStorage.getItem("userId");
             if (!userId) {
                 setError("로그인이 필요합니다.");
                 return;
             }
 
             try {
-                const response = await axios.get(`/members/${userId}`);
+                const response = await axios.get(`http://13.124.145.176:8080/members/${userId}`);
                 const memberData = response.data;
 
                 if (memberData && memberData.checklists) {
@@ -33,37 +34,48 @@ const CheckList = () => {
     }, []);
 
     if (error) {
-        return <div className="error">{error}</div>;
-    }
-
-    return (
-        <div className="container">
-            <header>
-                <img src="/png/logo.png" alt="logo" className="logo" />
-                <h1>TRAVEL KIT</h1>
-            </header>
-            <main>
-                <h2>나의 체크리스트</h2>
-                <div className="checklist-container">
-                    {checklists.map((checklist) => (
-                        <div
-                            key={checklist.id}
-                            className="checklist-card"
-                            style={{
-                                backgroundImage: `url(${checklist.image || "/default-image.jpg"})`,
-                            }}
-                            onClick={() => (window.location.href = `/checklist/${checklist.id}`)}
-                        >
-                            <p>{`${checklist.destination.city}, ${checklist.destination.country}`}</p>
-                            <span>{`${checklist.departureDate} ~ ${checklist.arrivalDate}`}</span>
-                        </div>
-                    ))}
-                    <div className="add-checklist-card" onClick={() => (window.location.href = "/select")}>
-                        <span>+</span>
-                    </div>
+        return (
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh'
+            }}>
+                <div className="error">
+                    {error}
                 </div>
-            </main>
-        </div>
+            </div>
+        );
+        
+    }
+    const goBack = () => {
+        navigate(-1);  // -1은 이전 페이지를 의미
+    };
+    return (
+         <div className="List_container">
+              <header className="list-header">
+                <img src="/png/logo.png" alt="logo" className="list-logo" />
+                <h1>TRAVEL KIT</h1>
+              </header>
+
+              <form className="list-form">
+                <h2>나의 체크리스트</h2>
+
+                <div className="checklist-container">
+                  {checklists.map((checklist, index) => (
+                    <div key={index} className="checklist-card" onClick={() => (window.location.href = `/checklist/${checklist.id}`)}>
+                      <p>{checklist.destination.country} - {checklist.destination.city}</p>
+                      <span>{checklist.departureDate} ~ {checklist.arrivalDate}</span>
+                    </div>
+                  ))}
+
+                  {/* + 버튼은 다른 페이지로 이동 */}
+                  <div className="add-checklist-card" onClick={() => (window.location.href = "/select")}>
+                    <span>+</span>
+                  </div>
+                </div>
+              </form>
+         </div>
     );
 };
 

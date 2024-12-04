@@ -6,14 +6,14 @@
   font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.loginCSS{
+  display: flex;                /* Flexbox 레이아웃 활성화 */
+  justify-content: center;      /* 가로 방향으로 중앙 정렬 */
+  align-items: center;          /* 세로 방향으로 중앙 정렬 */
+  height: 100vh; 
 }
 
-header {
+.loginCSS header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -24,37 +24,37 @@ header {
   justify-content: center;
 }
 
-header .logo {
+.loginCSS header .logo {
   width: 40px; /* 로고의 크기를 적절히 조정 */
   height: auto;
   margin-right: -15px; /* 텍스트와 로고 사이 간격 */
 }
 
-header h1 {
+.loginCSS header h1 {
   font-size: 28px;
   color: #414141;
   font-weight: 800;
 }
 
 
-form {
+.loginCSS form {
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   width: 314px;
-  margin-top: 200px; 
+  margin-top: 40px;
 }
 
-form h2 {
+.loginCSS form h2 {
   font-size: 28px;
   color: #414141;
   margin-bottom: 40px;
 }
 
-form input[type="text"],
-form input[type="password"],
-form input[type="email"] {
+.loginCSS form input[type="text"],
+.loginCSS form input[type="password"],
+.loginCSS form input[type="email"] {
   border: solid 1px #414141;
   padding: 10px;
   margin: 10px 0;
@@ -62,7 +62,7 @@ form input[type="email"] {
   border-radius: 10px;
 }
 
-form input[type="submit"] {
+.loginCSS form input[type="submit"] {
   background-color: #0A62D0;
   color: #FFFFFF;
   height: 43px;
@@ -71,25 +71,23 @@ form input[type="submit"] {
   cursor: pointer;
   margin-top: 20px;
 }
-.left-align {
+.loginCSS .left-align {
   width: 100%;
   text-align: left; /* 왼쪽 정렬 */
   margin-left: 25%; /* 필요한 경우 왼쪽 여백 추가 */
 }
 
 /* 회원가입 링크 스타일 */
-form p {
+.loginCSS form p {
   margin-top: 30px; /* 로그인 버튼과의 간격을 조정 */
 }
 
-form p a {
+.loginCSS form p a {
   color: #414141; /* 원하는 색상으로 변경 (예: 파란색) */
   text-decoration: none; /* 밑줄 제거 */
   font-size: 13px; /* 텍스트 크기 조정 */
 }
 
-form p a:hover {
+.loginCSS form p a:hover {
   color: #0056b3; /* 마우스 오버 시 색상 변경 (선택사항) */
 }
-
-

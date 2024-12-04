@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { countryToKorean } from '../convert'; // countryToKorean 함수 import
 import './boardlist.css';
 
 function BoardList() {
@@ -12,10 +11,9 @@ function BoardList() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:8080/country/${boardName}`)
+        fetch(`/posts`)
             .then(response => {
                 if (!response.ok) {
-                    console.log(`${boardName}`);
                     throw new Error('게시글을 불러오는 데 실패했습니다.');
                 }
                 return response.json();
@@ -24,7 +22,7 @@ function BoardList() {
                 if (Array.isArray(posts)) {
                     const sortedPosts = sortPosts(posts, sortOrder);
                     setPosts(sortedPosts);
-                    setFilteredPosts(sortedPosts);
+                    setFilteredPosts(sortedPosts); // 처음에는 전체 게시글을 필터링된 목록으로 설정
                 } else {
                     throw new Error('게시글 데이터가 배열이 아닙니다.');
                 }
@@ -93,7 +91,7 @@ function BoardList() {
         <div className="board_overlay">
             <header id="titleContainer">
                 <img src="/png/back.png" alt="back" className="back" onClick={() => navigate('/board')} />
-                <h1>{countryToKorean(boardName)} 게시판</h1> {/* boardName을 countryToKorean으로 변환 */}
+                <h1>전체 게시판</h1>
                 <img
                     src="/png/menu.png"
                     alt="menuicon"

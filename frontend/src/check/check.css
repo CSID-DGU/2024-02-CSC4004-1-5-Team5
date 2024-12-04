@@ -6,13 +6,7 @@
     font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
 }
 
-/* body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
-body {
+.Check_container {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -21,22 +15,12 @@ body {
     /* 화면 전체 높이를 채우기 위해 설정 */
     background-color: #ffffff;
     margin: 0; /* 추가적인 여백 제거 */
-}
-
-
-.container {
     width: 393px;
     margin: 0 auto;
     background-color: white;
     padding: 20px;
 }
-
-/* header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-.check-header {
+.Check_container .check-header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -51,7 +35,7 @@ body {
 }
 
 
-form {
+.Check_container form {
     padding: 20px;
     display: inline-flex;
     flex-direction: column;
@@ -60,21 +44,18 @@ form {
     margin-top: 200px;
 }
 
-form h2 {
+.Check_container form h2 {
     font-size: 28px;
     color: #414141;
     margin-bottom: 40px;
 }
 
-
-
-
-.date-range {
+.Check_container .date-range {
     font-size: 12px;
     color: gray;
 }
 
-.notice-box {
+.Check_container .notice-box {
     background-color: #f1f1f1;
     padding: 10px;
     border-radius: 5px;
@@ -84,19 +65,20 @@ form h2 {
     margin-top: 20px;
 }
 
-.weather {
+.Check_container .weather {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     overflow-x: scroll;
+    gap : 10px
 }
 
-.weather .day {
+.Check_container .weather .day {
     text-align: center;
     width: 50px;
 }
 
-.checklist {
+.Check_container .checklist {
     margin-top: 200px;
     display: flex;
     flex-direction: column; /* 세로 방향 정렬 */
@@ -107,12 +89,12 @@ form h2 {
     box-sizing: border-box;
 }
 
-.checklist h2 {
+.Check_container .checklist h2 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-.checklist-item {
+.Check_container .checklist-item {
     display: flex;
     align-items: center;
     justify-content: space-between; /* 버튼을 맨 오른쪽에 배치 */
@@ -121,7 +103,7 @@ form h2 {
     margin-bottom: 5px;
 }
 
-.checklist-item label {
+.Check_container .checklist-item label {
     word-wrap: break-word; /* 긴 단어도 줄바꿈 처리 */
     text-align: left; /* 텍스트 왼쪽 정렬 */
     font-size: 16px; /* 텍스트 크기 */
@@ -129,7 +111,7 @@ form h2 {
     margin-left: 10px; /* 텍스트와 체크박스 간격 */
     margin-right: 30px; /* 텍스트와 체크박스 간격 */
 }
-.delete-item
+.Check_container .delete-item
 {
     border: none;
     color: gray;
@@ -141,31 +123,31 @@ form h2 {
     padding: 5px 10px;
     border-radius: 4px;
 }
-.delete-item:hover {
+.Check_container .delete-item:hover {
     background-color: #0056b3;
 }
-.category h3 {
+.Check_container .category h3 {
     font-size: 16px;
     cursor: pointer;
 }
 
-.category ul {
+.Check_container .category ul {
     list-style: none;
     margin-top: 5px;
     padding-left: 10px;
 }
 
-.category li {
+.Check_container .category li {
     display: flex;
     align-items: center;
     margin-top: 5px;
 }
 
-.hidden {
+.Check_container .hidden {
     display: none;
 }
 
-.toggle-button {
+.Check_container .toggle-button {
     background: none;
     border: none;
     font-size: 16px;
@@ -173,11 +155,11 @@ form h2 {
     color: #007bff;
 }
 
-.category {
+.Check_container .category {
     margin: 20px 0;
 }
 
-.add-item {
+.Check_container .add-item {
     margin-top: 10px;
     display: block;
     background-color: #007bff;
@@ -188,23 +170,23 @@ form h2 {
     border-radius: 4px;
 }
 
-.add-item:hover {
+.Check_container .add-item:hover {
     background-color: #0056b3;
 }
-.input-wrapper {
+.Check_container .input-wrapper {
     display: flex;
     margin-top: 10px;
     gap: 5px;
 }
 
-.new-item-input {
+.Check_container .new-item-input {
     flex: 1;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.confirm-button {
+.Check_container .confirm-button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -213,21 +195,21 @@ form h2 {
     border-radius: 4px;
 }
 
-.confirm-button:hover {
+.Check_container .confirm-button:hover {
     background-color: #0056b3;
 }
-.input-container {
+.Check_container .input-container {
     margin-top: 10px;
 }
 
-.input-container input {
+.Check_container .input-container input {
     padding: 5px;
     margin-right: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.input-container button {
+.Check_container .input-container button {
     padding: 5px 10px;
     background-color: #007bff;
     color: white;
@@ -236,11 +218,11 @@ form h2 {
     cursor: pointer;
 }
 
-.input-container button:hover {
+.Check_container .input-container button:hover {
     background-color: #0056b3;
 }
 
-h3 {
+.Check_container h3 {
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
@@ -252,24 +234,25 @@ h3 {
 
 
 
-h3 a {
+.Check_container h3 a {
   color: #414141; /* 원하는 색상으로 변경 (예: 파란색) */
   text-decoration: none; /* 밑줄 제거 */
   font-size: 20px; /* 텍스트 크기 조정 */
 }
 
-.recommend-button{
+.Check_container .recommend-button{
     background-color: #007bff;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
-.recommend-button:hover{
+.Check_container .recommend-button:hover{
     background-color: #0056b3;
 }
-.recommendations-modal {
+.Check_container .recommendations-modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -284,28 +267,28 @@ h3 a {
     overflow-y: auto; /* 내용이 많아질 경우 스크롤 추가 */
 }
 
-.recommendation-item {
+.Check_container .recommendation-item {
     display: flex; /* 아이템과 버튼을 같은 줄에 배치 */
     justify-content: space-between; /* 항목과 버튼 간 공간 확보 */
     align-items: center; /* 세로 정렬 */
     margin-bottom: 10px; /* 항목 간 간격 */
 }
 
-.recommendation-item span {
+.Check_container .recommendation-item span {
     flex: 1; /* 텍스트 영역 확장 */
     font-size: 16px;
 }
 
-.recommendations-modal h2 {
+.Check_container .recommendations-modal h2 {
     margin-bottom: 15px;
 }
 
-.recommendations-modal ul {
+.Check_container .recommendations-modal ul {
     list-style: none;
     padding: 0;
 }
 
-.recommendations-modal button {
+.Check_container .recommendations-modal button {
     margin-top: 10px;
     padding: 5px 10px;
     background-color: #007bff;

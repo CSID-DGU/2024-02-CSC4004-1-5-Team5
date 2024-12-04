@@ -15,7 +15,7 @@ import java.util.Map;
 @Service
 public class RecommendItemService {
 
-    //private static final String OPENAI_API_KEY = "";
+    private static final String OPENAI_API_KEY= "";
     private static final String OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
     private final RestTemplate restTemplate = new RestTemplate();
 

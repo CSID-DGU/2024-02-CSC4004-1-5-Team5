@@ -12,7 +12,7 @@ function BoardList() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:8080/country/${boardName}`)
+        fetch(`/country/${boardName}`)
             .then(response => {
                 if (!response.ok) {
                     console.log(`${boardName}`);

@@ -16,17 +16,16 @@ body {
 
 /* 헤더 스타일 */
 .list-header {
-  margin-top: 20px;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 헤더 하단 그림자 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
 }
 
 .list-header img {

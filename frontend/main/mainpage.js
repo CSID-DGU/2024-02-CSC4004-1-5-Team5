@@ -1,24 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import axios from "axios";
 import "../style.css";
+import { cityToCountry, cityToImageFile, cityToKorean } from '../convert';
 
 function MainPage() {
     const navigate = useNavigate();
     const [checklists, setChecklists] = useState([]); // 체크리스트 정보 상태
     const limitedChecklists = checklists.slice(-3);
     const [userId, setUserId] = useState(null);
-    const popularPosts = [
-        { id: 1, title: "첫 번째 인기 게시물" },
-        { id: 2, title: "두 번째 인기 게시물" },
-        { id: 3, title: "세 번째 인기 게시물" },
-        { id: 4, title: "네 번째 인기 게시물" },
-        { id: 5, title: "다섯 번째 인기 게시물" },
-    ];
+    const [popularPosts,setPopularPosts] = useState([]);
 
     const handleMenuClick = () => {
-        const userId = Cookies.get("userId");
         if (userId) {
             navigate("/menu1");
         } else {
@@ -28,13 +21,12 @@ function MainPage() {
 
     useEffect(() => {
             // 쿠키에서 userId 가져오기
-            const userIdFromCookie = Cookies.get("userId");
-            if (userIdFromCookie) {
-                setUserId(userIdFromCookie);
-
+            const user = localStorage.getItem("userId");
+            if (user) {
+                setUserId(user);
                 // API 요청 보내기
                 axios
-                    .get(`/members/${userIdFromCookie}`)
+                    .get(`http://13.124.145.176:8080/members/${user}`)
                     .then((response) => {
                         if (response.data && response.data.checklists) {
                             setChecklists(response.data.checklists);
@@ -44,6 +36,16 @@ function MainPage() {
                         console.error("서버와 통신 중 문제가 발생했습니다.", err);
                     });
             }
+            axios
+                .get(`http://13.124.145.176:8080/posts/popular`)
+                .then((response) => {
+                    if (response.data) {
+                        setPopularPosts(response.data);
+                    }
+                })
+                .catch((err) => {
+                    console.error("서버와 통신 중 문제가 발생했습니다.", err);
+                });
         }, []);
 
     return (
@@ -64,23 +66,33 @@ function MainPage() {
               <div className="main">
                 <h2 className="checklist-title">최근에 등록한 체크리스트</h2>
                 <p className="more">
-                  <a href="#">더보기+</a>
+                  <a href="/mychecklist">더보기+</a>
                 </p>
               </div>
 
               {/* 체크리스트 섹션 */}
               <div className="checklist-section">
-                {limitedChecklists.map((checklist, index) => (
-                  <div key={index} className="checklist-list">
-                    <img src="/png/japan.png"alt="Japan" className="country-flag" />
-                    <p>{checklist.destination.city}</p>
+                  {limitedChecklists.map((checklist, index) => {
+                      const city = checklist.destination.city; // Get city name
+                      const country = cityToCountry(city); // Get corresponding country
+                      const flagImage = cityToImageFile(city); // Get country flag image
+                      const koreanCity = cityToKorean(city); // Convert city to Korean
+                      return (
+                          <div key={index} className="checklist-list">
+                              <img
+                                  src={`/png/${flagImage}`} // Display the country flag dynamically
+                                  alt={country}
+                                  className="country-flag"
+                              />
+                              <p>{koreanCity}</p> {/* Display city name in Korean */}
+                          </div>
+                      );
+                  })}
+                  <div className="checklist-list add-checklist">
+                      <a href="/select" className="add-button">
+                          +
+                      </a>
                   </div>
-                ))}
-                <div className="checklist-list add-checklist">
-                  <a href="#checklist-create" className="add-button">
-                    +
-                  </a>
-                </div>
               </div>
 
               {/* 인기 게시물 섹션 */}
@@ -92,9 +104,9 @@ function MainPage() {
                   </p>
                 </div>
                 <ul id="popular-posts" className="post-list">
-                  {popularPosts.map((post) => (
-                    <li key={post.id} className="post-item">
-                      <a href="#"> {post.id}. {post.title}</a>
+                  {popularPosts.map((post, index) => (
+                    <li key={post.id} className="post-item" onClick={() => (window.location.href = `/posts/${post.id}`)}>
+                       {index + 1}. {post.title}
                     </li>
                   ))}
                 </ul>

@@ -15,7 +15,7 @@ function Login() {
     setSuccessMessage('');
 
     try {
-      const response = await fetch(`/login`, {
+      const response = await fetch(`http://13.124.145.176:8080/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,6 +26,7 @@ function Login() {
 
       if (response.ok) {
         setSuccessMessage('로그인 성공');
+        localStorage.setItem("userId", username);
         navigate("/")
       } else {
         setErrorMessage('잘못된 아이디 또는 비밀번호입니다.');

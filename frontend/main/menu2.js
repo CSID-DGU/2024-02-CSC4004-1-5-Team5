@@ -1,7 +1,12 @@
 import React from "react";
 import "../style.css";
+import { useNavigate } from "react-router-dom";
 
 function Menu2({ onClose }) {
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);  // -1은 이전 페이지를 의미
+    };
     return (
         <div>
             <div>

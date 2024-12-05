@@ -89,6 +89,7 @@ form h2 {
     justify-content: space-between;
     margin-top: 10px;
     overflow-x: scroll;
+    gap : 10px
 }
 
 .weather .day {
@@ -265,6 +266,7 @@ h3 a {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
 .recommend-button:hover{
     background-color: #0056b3;

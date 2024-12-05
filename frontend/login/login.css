@@ -6,12 +6,7 @@
   font-family: 'Pretendard', sans-serif; /* 모든 요소에 Pretendard 폰트 적용 */
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 
 header {
   position: fixed;
@@ -43,7 +38,7 @@ form {
   flex-direction: column;
   align-items: center;
   width: 314px;
-  margin-top: 200px; 
+  margin-top: 200px;
 }
 
 form h2 {

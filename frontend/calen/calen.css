@@ -1,19 +1,21 @@
+
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard', sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* 상단부터 배치 */
-  min-height: 100vh; /* 화면 전체 높이를 채우기 위해 설정 */
-  background-color: #ffffff;
-  margin: 0;
+
+.calen-header .calen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 상단부터 배치 */
+    min-height: 100vh; /* 화면 전체 높이를 채우기 위해 설정 */
+    background-color: #ffffff;
+    margin: 0;
 }
 
 /* Header 스타일 */

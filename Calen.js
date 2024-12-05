@@ -50,7 +50,8 @@ const Calen = () => {
       </header>
       <div className="calen-container">
         <form>
-          <h2>출발날짜와 도착날짜를 선택하세요.</h2>
+         <h2>출발날짜와 도착날짜를 선택하세요.</h2> 
+      
           <div className="calendar">
             <Flatpickr
               options={{

@@ -12,7 +12,7 @@ function PostDetail() {
     const [showMenu, setShowMenu] = useState(false); // 메뉴 표시 여부 상태 추가
 
     useEffect(() => {
-        fetch(`/posts/${postId}`)
+        fetch(`http://13.124.145.176:8080/posts/${postId}`)
             .then(response => response.json())
             .then(postData => {
                 console.log('게시글 데이터:', postData);
@@ -24,7 +24,7 @@ function PostDetail() {
     }, [postId]);
 
     const likePost = () => {
-        fetch(`/posts/${postId}/like`, { method: 'POST' })
+        fetch(`http://13.124.145.176:8080/posts/${postId}/like`, { method: 'POST' })
             .then(response => response.ok ? response.json() : Promise.reject('좋아요 처리 실패'))
             .then(updatedPost => {
                 setPost(updatedPost);
@@ -55,7 +55,7 @@ function PostDetail() {
         const confirmation = window.confirm("정말로 게시글을 삭제하시겠습니까?"); // 확인/취소 팝업
 
         if (confirmation) {
-            fetch(`/posts/${postId}`, { method: 'DELETE' })
+            fetch(`http://13.124.145.176:8080/posts/${postId}`, { method: 'DELETE' })
                 .then(() => {
                     navigate('/board');  // 게시판 목록으로 돌아감
                 })

@@ -11,7 +11,7 @@ function BoardList() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`/posts`)
+        fetch(`http://13.124.145.176:8080/posts`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('게시글을 불러오는 데 실패했습니다.');
@@ -58,7 +58,7 @@ function BoardList() {
             post.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setFilteredPosts(filtered);
-        
+
         setTimeout(() => {
             const textArea = document.getElementById('search'); // textarea 요소를 가져옵니다
             const currentText = textArea.value; // 현재 입력된 텍스트

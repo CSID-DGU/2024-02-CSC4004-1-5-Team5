@@ -10,14 +10,6 @@ function PostCreate() {
     const [content, setContent] = useState('');  // 본문 상태
     const navigate = useNavigate();
 
-    // 쿠키에서 memberId 가져오기
-    const getCookie = (name) => {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
-    };
-
     // 제목과 본문 유효성 검사 후 게시글 추가 함수
     const addPost = () => {
         // 제목과 본문 유효성 검사
@@ -38,7 +30,7 @@ function PostCreate() {
         };
 
         // 서버에 게시글 데이터 전송
-        fetch(`/posts/new`, {  // 백엔드 API에 맞게 URL 수정
+        fetch(`http://13.124.145.176:8080/posts/new`, {  // 백엔드 API에 맞게 URL 수정
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(postData),

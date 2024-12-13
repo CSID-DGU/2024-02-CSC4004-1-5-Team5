@@ -12,7 +12,7 @@ function BoardList() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`/country/${boardName}`)
+        fetch(`http://13.124.145.176:8080/posts`) // `/country/${boardName}` 요청 오류(미구현)
             .then(response => {
                 if (!response.ok) {
                     console.log(`${boardName}`);
